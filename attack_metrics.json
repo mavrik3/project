@@ -1,0 +1,1682 @@
+[
+    {
+        "attack_type": "SNR",
+        "perturbation": "10:Gaussian Noise",
+        "key": "(freq, butter4MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc)",
+        "metrics": {
+            "accuracy": 0.9377049180327869,
+            "precision": 0.9372510626339887,
+            "recall": 0.9331286835664172,
+            "f1_score": 0.9344296997338662
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "20:Gaussian Noise",
+        "key": "(freq, butter4MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc)",
+        "metrics": {
+            "accuracy": 0.9475409836065574,
+            "precision": 0.9469110305868398,
+            "recall": 0.9438484068230282,
+            "f1_score": 0.9449356041077964
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "30:Gaussian Noise",
+        "key": "(freq, butter4MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc)",
+        "metrics": {
+            "accuracy": 0.9475409836065574,
+            "precision": 0.9487005588499073,
+            "recall": 0.9439877602232511,
+            "f1_score": 0.9455061090766509
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter4MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc)",
+        "metrics": {
+            "accuracy": 0.003278688524590164,
+            "precision": 0.002564102564102564,
+            "recall": 0.0033444816053511705,
+            "f1_score": 0.0029027576197387522
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter4MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc)",
+        "metrics": {
+            "accuracy": 0.003278688524590164,
+            "precision": 0.0015384615384615385,
+            "recall": 0.0033444816053511705,
+            "f1_score": 0.002107481559536354
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter4MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc)",
+        "metrics": {
+            "accuracy": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": true,
+        "target_class": 12,
+        "key": "(freq, butter4MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc)",
+        "metrics": {
+            "accuracy": 0.09508196721311475,
+            "precision": 0.013293694125272109,
+            "recall": 0.0802675585284281,
+            "f1_score": 0.022641609598131336
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": true,
+        "target_class": 12,
+        "key": "(freq, butter4MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc)",
+        "metrics": {
+            "accuracy": 0.09508196721311475,
+            "precision": 0.0840080971659919,
+            "recall": 0.0802675585284281,
+            "f1_score": 0.019385233240654925
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": true,
+        "target_class": 12,
+        "key": "(freq, butter4MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc)",
+        "metrics": {
+            "accuracy": 0.11147540983606558,
+            "precision": 0.04181936251181272,
+            "recall": 0.09650068128328998,
+            "f1_score": 0.04459187831072878
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "10:Gaussian Noise",
+        "key": "(IQSplit, butter1MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc)",
+        "metrics": {
+            "accuracy": 0.8163934426229508,
+            "precision": 0.8156679352411416,
+            "recall": 0.8066570338667732,
+            "f1_score": 0.8068131187529181
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "20:Gaussian Noise",
+        "key": "(IQSplit, butter1MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc)",
+        "metrics": {
+            "accuracy": 0.8327868852459016,
+            "precision": 0.8311723612009654,
+            "recall": 0.8237204281384055,
+            "f1_score": 0.8239342198219366
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "30:Gaussian Noise",
+        "key": "(IQSplit, butter1MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc)",
+        "metrics": {
+            "accuracy": 0.8360655737704918,
+            "precision": 0.8375796350456984,
+            "recall": 0.8280621648330834,
+            "f1_score": 0.8277767131978006
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter1MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc)",
+        "metrics": {
+            "accuracy": 0.003278688524590164,
+            "precision": 0.0038461538461538464,
+            "recall": 0.0033444816053511705,
+            "f1_score": 0.0035778175313059034
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter1MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc)",
+        "metrics": {
+            "accuracy": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter1MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc)",
+        "metrics": {
+            "accuracy": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": true,
+        "target_class": 12,
+        "key": "(IQSplit, butter1MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc)",
+        "metrics": {
+            "accuracy": 0.10819672131147541,
+            "precision": 0.031483009743879305,
+            "recall": 0.09277029795424444,
+            "f1_score": 0.03972746508510884
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": true,
+        "target_class": 12,
+        "key": "(IQSplit, butter1MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc)",
+        "metrics": {
+            "accuracy": 0.15737704918032788,
+            "precision": 0.09932414328966054,
+            "recall": 0.1418720745594639,
+            "f1_score": 0.0878138473726709
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": true,
+        "target_class": 12,
+        "key": "(IQSplit, butter1MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc)",
+        "metrics": {
+            "accuracy": 0.07540983606557378,
+            "precision": 0.05264465289028298,
+            "recall": 0.06898478330004469,
+            "f1_score": 0.05292322196274132
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "10:Gaussian Noise",
+        "key": "(freq, butter2MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, pos)",
+        "metrics": {
+            "accuracy": 0.8,
+            "precision": 0.8015594541910331,
+            "recall": 0.7951939396448234,
+            "f1_score": 0.7972848576817296
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "20:Gaussian Noise",
+        "key": "(freq, butter2MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, pos)",
+        "metrics": {
+            "accuracy": 0.84375,
+            "precision": 0.8411612224541286,
+            "recall": 0.8435391397938485,
+            "f1_score": 0.841518930804645
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "30:Gaussian Noise",
+        "key": "(freq, butter2MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, pos)",
+        "metrics": {
+            "accuracy": 0.85,
+            "precision": 0.8494756651438679,
+            "recall": 0.8453398600819638,
+            "f1_score": 0.8466587961640073
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter2MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, pos)",
+        "metrics": {
+            "accuracy": 0.025,
+            "precision": 0.03544575725026853,
+            "recall": 0.029285714285714286,
+            "f1_score": 0.03097854526425955
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter2MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, pos)",
+        "metrics": {
+            "accuracy": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter2MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, pos)",
+        "metrics": {
+            "accuracy": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": true,
+        "target_class": 6,
+        "key": "(freq, butter2MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, pos)",
+        "metrics": {
+            "accuracy": 0.125,
+            "precision": 0.03395367519078859,
+            "recall": 0.16166466586634654,
+            "f1_score": 0.05513784461152882
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": true,
+        "target_class": 6,
+        "key": "(freq, butter2MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, pos)",
+        "metrics": {
+            "accuracy": 0.15,
+            "precision": 0.2555669749914354,
+            "recall": 0.19250000000000003,
+            "f1_score": 0.11311467253742295
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": true,
+        "target_class": 6,
+        "key": "(freq, butter2MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, pos)",
+        "metrics": {
+            "accuracy": 0.2375,
+            "precision": 0.25673242420230374,
+            "recall": 0.2761054421768708,
+            "f1_score": 0.21253496119855567
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "10:Gaussian Noise",
+        "key": "(IQSplit, butter4MHz_Fs10MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, pos)",
+        "metrics": {
+            "accuracy": 0.8875,
+            "precision": 0.8878443448237497,
+            "recall": 0.8901810724289715,
+            "f1_score": 0.8882184412524806
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "20:Gaussian Noise",
+        "key": "(IQSplit, butter4MHz_Fs10MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, pos)",
+        "metrics": {
+            "accuracy": 0.8875,
+            "precision": 0.8880952380952382,
+            "recall": 0.8907062825130053,
+            "f1_score": 0.888193550069247
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "30:Gaussian Noise",
+        "key": "(IQSplit, butter4MHz_Fs10MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, pos)",
+        "metrics": {
+            "accuracy": 0.9,
+            "precision": 0.9011850894203836,
+            "recall": 0.9009103641456583,
+            "f1_score": 0.9005867466641242
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter4MHz_Fs10MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, pos)",
+        "metrics": {
+            "accuracy": 0.175,
+            "precision": 0.2287743312588033,
+            "recall": 0.17596352334037066,
+            "f1_score": 0.19355235634305404
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter4MHz_Fs10MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, pos)",
+        "metrics": {
+            "accuracy": 0.13125,
+            "precision": 0.1972075543504115,
+            "recall": 0.13518707482993197,
+            "f1_score": 0.15306122448979592
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter4MHz_Fs10MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, pos)",
+        "metrics": {
+            "accuracy": 0.00625,
+            "precision": 0.002857142857142857,
+            "recall": 0.008928571428571428,
+            "f1_score": 0.004329004329004329
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": true,
+        "target_class": 6,
+        "key": "(IQSplit, butter4MHz_Fs10MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, pos)",
+        "metrics": {
+            "accuracy": 0.43125,
+            "precision": 0.6122852302976527,
+            "recall": 0.44538294628196107,
+            "f1_score": 0.41851932835427463
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": true,
+        "target_class": 6,
+        "key": "(IQSplit, butter4MHz_Fs10MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, pos)",
+        "metrics": {
+            "accuracy": 0.425,
+            "precision": 0.6293756530825496,
+            "recall": 0.4429456955195872,
+            "f1_score": 0.4169319942429186
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": true,
+        "target_class": 6,
+        "key": "(IQSplit, butter4MHz_Fs10MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, pos)",
+        "metrics": {
+            "accuracy": 0.1375,
+            "precision": 0.15553441715669317,
+            "recall": 0.16903902940486537,
+            "f1_score": 0.10194298694298694
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "10:Gaussian Noise",
+        "key": "(freq, butter1MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, pos)",
+        "metrics": {
+            "accuracy": 0.5714961002127157,
+            "precision": 0.5706282840571706,
+            "recall": 0.5730356406834074,
+            "f1_score": 0.5682163291063405
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "20:Gaussian Noise",
+        "key": "(freq, butter1MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, pos)",
+        "metrics": {
+            "accuracy": 0.6357835027180335,
+            "precision": 0.6379449371556831,
+            "recall": 0.6369456789883998,
+            "f1_score": 0.6336167957488271
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "30:Gaussian Noise",
+        "key": "(freq, butter1MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, pos)",
+        "metrics": {
+            "accuracy": 0.6327109430394706,
+            "precision": 0.6342407914784859,
+            "recall": 0.6338014668243408,
+            "f1_score": 0.630467229863122
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter1MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, pos)",
+        "metrics": {
+            "accuracy": 0.05672417868116285,
+            "precision": 0.06745718121527851,
+            "recall": 0.057053165185423686,
+            "f1_score": 0.055516723030738034
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter1MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, pos)",
+        "metrics": {
+            "accuracy": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter1MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, pos)",
+        "metrics": {
+            "accuracy": 0.0007090522335145356,
+            "precision": 0.0003201285363703111,
+            "recall": 0.0006988237968511775,
+            "f1_score": 0.00038857356294559007
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": true,
+        "target_class": 6,
+        "key": "(freq, butter1MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, pos)",
+        "metrics": {
+            "accuracy": 0.12621129756558733,
+            "precision": 0.1252569723589337,
+            "recall": 0.12723145649027717,
+            "f1_score": 0.11574667918983031
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": true,
+        "target_class": 6,
+        "key": "(freq, butter1MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, pos)",
+        "metrics": {
+            "accuracy": 0.14204679744741197,
+            "precision": 0.03618445798540585,
+            "recall": 0.14260750628762767,
+            "f1_score": 0.03599499778632171
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": true,
+        "target_class": 6,
+        "key": "(freq, butter1MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, pos)",
+        "metrics": {
+            "accuracy": 0.13826518553533443,
+            "precision": 0.14588289196902693,
+            "recall": 0.14070893994775432,
+            "f1_score": 0.11040386217569345
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "10:Gaussian Noise",
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, pos)",
+        "metrics": {
+            "accuracy": 0.4554478846608367,
+            "precision": 0.45650998339283183,
+            "recall": 0.45597128993737185,
+            "f1_score": 0.45474587732644817
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "20:Gaussian Noise",
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, pos)",
+        "metrics": {
+            "accuracy": 0.4871188844244859,
+            "precision": 0.488421534822706,
+            "recall": 0.4879249126250914,
+            "f1_score": 0.4860040695061883
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "30:Gaussian Noise",
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, pos)",
+        "metrics": {
+            "accuracy": 0.4972819664381943,
+            "precision": 0.4984567701860026,
+            "recall": 0.4981668426216975,
+            "f1_score": 0.49634425016122347
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, pos)",
+        "metrics": {
+            "accuracy": 0.012526589458756796,
+            "precision": 0.013634098057212775,
+            "recall": 0.012966482992729764,
+            "f1_score": 0.01326080968302391
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, pos)",
+        "metrics": {
+            "accuracy": 0.003781611912077523,
+            "precision": 0.004051968153311265,
+            "recall": 0.0038835792615075893,
+            "f1_score": 0.003952242187601757
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, pos)",
+        "metrics": {
+            "accuracy": 0.01819900732687308,
+            "precision": 0.007060333761232349,
+            "recall": 0.01854974704890388,
+            "f1_score": 0.010227801022780102
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": true,
+        "target_class": 6,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, pos)",
+        "metrics": {
+            "accuracy": 0.2013708343181281,
+            "precision": 0.24754193158931595,
+            "recall": 0.20246467486236533,
+            "f1_score": 0.15314635583788333
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": true,
+        "target_class": 6,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, pos)",
+        "metrics": {
+            "accuracy": 0.19333490900496336,
+            "precision": 0.3813175672385413,
+            "recall": 0.19375771833476899,
+            "f1_score": 0.12750898338986394
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": true,
+        "target_class": 6,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, pos)",
+        "metrics": {
+            "accuracy": 0.1746632001890806,
+            "precision": 0.2041307817506264,
+            "recall": 0.1753569260696654,
+            "f1_score": 0.11440614295394032
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "10:Gaussian Noise",
+        "key": "(freq, butter2MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, dvc)",
+        "metrics": {
+            "accuracy": 0.8421177026707635,
+            "precision": 0.8419959419443453,
+            "recall": 0.8409736924960747,
+            "f1_score": 0.8409769559795677
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "20:Gaussian Noise",
+        "key": "(freq, butter2MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, dvc)",
+        "metrics": {
+            "accuracy": 0.9080595603876153,
+            "precision": 0.9084984740947731,
+            "recall": 0.9072580285884759,
+            "f1_score": 0.9073847756725884
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "30:Gaussian Noise",
+        "key": "(freq, butter2MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, dvc)",
+        "metrics": {
+            "accuracy": 0.913022926022217,
+            "precision": 0.913167905055064,
+            "recall": 0.912365376872883,
+            "f1_score": 0.9124040020499605
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter2MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, dvc)",
+        "metrics": {
+            "accuracy": 0.002363507445048452,
+            "precision": 0.005054164600001437,
+            "recall": 0.0023832627617031287,
+            "f1_score": 0.003018938295139033
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter2MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, dvc)",
+        "metrics": {
+            "accuracy": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter2MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, dvc)",
+        "metrics": {
+            "accuracy": 0.0009454029780193808,
+            "precision": 7.905763301446754e-05,
+            "recall": 0.0009023234829686443,
+            "f1_score": 0.00014537789165712625
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": true,
+        "target_class": 12,
+        "key": "(freq, butter2MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, dvc)",
+        "metrics": {
+            "accuracy": 0.013708343181281021,
+            "precision": 0.010418635437903364,
+            "recall": 0.013502297978104429,
+            "f1_score": 0.009609902196413622
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": true,
+        "target_class": 12,
+        "key": "(freq, butter2MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, dvc)",
+        "metrics": {
+            "accuracy": 0.07965020089813282,
+            "precision": 0.02466313276932092,
+            "recall": 0.07793022950581786,
+            "f1_score": 0.015823784444118413
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": true,
+        "target_class": 12,
+        "key": "(freq, butter2MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, dvc)",
+        "metrics": {
+            "accuracy": 0.08319546206570551,
+            "precision": 0.05868226412773446,
+            "recall": 0.08335483811274194,
+            "f1_score": 0.04739591876981924
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "10:Gaussian Noise",
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, dvc)",
+        "metrics": {
+            "accuracy": 0.6166390924131411,
+            "precision": 0.6259959854876377,
+            "recall": 0.6159049064916501,
+            "f1_score": 0.618267041710453
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "20:Gaussian Noise",
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, dvc)",
+        "metrics": {
+            "accuracy": 0.7735759867643583,
+            "precision": 0.7732597065873205,
+            "recall": 0.772095036256553,
+            "f1_score": 0.7717420367648391
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "30:Gaussian Noise",
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, dvc)",
+        "metrics": {
+            "accuracy": 0.8028834790829591,
+            "precision": 0.8045211259397502,
+            "recall": 0.8013962054316609,
+            "f1_score": 0.8014578613420503
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, dvc)",
+        "metrics": {
+            "accuracy": 0.0018908059560387616,
+            "precision": 0.0030602978481761604,
+            "recall": 0.0019488427480524489,
+            "f1_score": 0.0023630078905604703
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, dvc)",
+        "metrics": {
+            "accuracy": 0.0002363507445048452,
+            "precision": 0.0005060728744939271,
+            "recall": 0.0002473410833539451,
+            "f1_score": 0.0003322811098189068
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, dvc)",
+        "metrics": {
+            "accuracy": 0.0030725596785629874,
+            "precision": 0.0022103382136866084,
+            "recall": 0.0031879260132938072,
+            "f1_score": 0.002466150320291358
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": true,
+        "target_class": 12,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, dvc)",
+        "metrics": {
+            "accuracy": 0.06239659654927913,
+            "precision": 0.07625307549141692,
+            "recall": 0.06153282166242003,
+            "f1_score": 0.03215648004454309
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": true,
+        "target_class": 12,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, dvc)",
+        "metrics": {
+            "accuracy": 0.08910423067832664,
+            "precision": 0.3366209162042486,
+            "recall": 0.0875874122970776,
+            "f1_score": 0.031858283077474354
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": true,
+        "target_class": 12,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'antenna': '1', 'txPower': 9.0}, dvc)",
+        "metrics": {
+            "accuracy": 0.09903096194753014,
+            "precision": 0.08991336357197446,
+            "recall": 0.09915183187527882,
+            "f1_score": 0.08870092590363338
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "10:Gaussian Noise",
+        "key": "(freq, butter2MHz_Fs100MHz, {'pos': 'static'}, dvc)",
+        "metrics": {
+            "accuracy": 0.9035449299258038,
+            "precision": 0.8288811931699286,
+            "recall": 0.8230898360778672,
+            "f1_score": 0.8253243312574617
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "20:Gaussian Noise",
+        "key": "(freq, butter2MHz_Fs100MHz, {'pos': 'static'}, dvc)",
+        "metrics": {
+            "accuracy": 0.9315746084089035,
+            "precision": 0.8570467216869774,
+            "recall": 0.8497425900169943,
+            "f1_score": 0.8530251014323379
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "30:Gaussian Noise",
+        "key": "(freq, butter2MHz_Fs100MHz, {'pos': 'static'}, dvc)",
+        "metrics": {
+            "accuracy": 0.9340478153338829,
+            "precision": 0.8592252117564652,
+            "recall": 0.8513909254018959,
+            "f1_score": 0.8549371845978246
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter2MHz_Fs100MHz, {'pos': 'static'}, dvc)",
+        "metrics": {
+            "accuracy": 0.0008244023083264633,
+            "precision": 0.0002944640753828033,
+            "recall": 0.000496031746031746,
+            "f1_score": 0.00036954915003695486
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter2MHz_Fs100MHz, {'pos': 'static'}, dvc)",
+        "metrics": {
+            "accuracy": 0.0008244023083264633,
+            "precision": 0.0002228163992869875,
+            "recall": 0.000496031746031746,
+            "f1_score": 0.0003075030750307503
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter2MHz_Fs100MHz, {'pos': 'static'}, dvc)",
+        "metrics": {
+            "accuracy": 0.0008244023083264633,
+            "precision": 0.0001633986928104575,
+            "recall": 0.000496031746031746,
+            "f1_score": 0.0002458210422812193
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(freq, butter2MHz_Fs100MHz, {'pos': 'static'}, dvc)",
+        "metrics": {
+            "accuracy": 0.009068425391591096,
+            "precision": 0.024640831175237392,
+            "recall": 0.00866596638655462,
+            "f1_score": 0.012462198809872206
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(freq, butter2MHz_Fs100MHz, {'pos': 'static'}, dvc)",
+        "metrics": {
+            "accuracy": 0.12530915086562242,
+            "precision": 0.12338476025570798,
+            "recall": 0.10912303028701476,
+            "f1_score": 0.059515941171324395
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(freq, butter2MHz_Fs100MHz, {'pos': 'static'}, dvc)",
+        "metrics": {
+            "accuracy": 0.12943116240725475,
+            "precision": 0.08333643035445049,
+            "recall": 0.10294743294472643,
+            "f1_score": 0.07425389802189737
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "10:Gaussian Noise",
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'pos': 'static'}, dvc)",
+        "metrics": {
+            "accuracy": 0.7807089859851608,
+            "precision": 0.7014105608047961,
+            "recall": 0.7064267476441182,
+            "f1_score": 0.7021609561643474
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "20:Gaussian Noise",
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'pos': 'static'}, dvc)",
+        "metrics": {
+            "accuracy": 0.8202802967848309,
+            "precision": 0.7392924101888272,
+            "recall": 0.7409140048089706,
+            "f1_score": 0.7392665746417607
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "30:Gaussian Noise",
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'pos': 'static'}, dvc)",
+        "metrics": {
+            "accuracy": 0.8178070898598516,
+            "precision": 0.7368906723079749,
+            "recall": 0.7409808976689701,
+            "f1_score": 0.7379338211771941
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'pos': 'static'}, dvc)",
+        "metrics": {
+            "accuracy": 0.06183017312448475,
+            "precision": 0.026560392987863612,
+            "recall": 0.03807277628032345,
+            "f1_score": 0.031077586206896556
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'pos': 'static'}, dvc)",
+        "metrics": {
+            "accuracy": 0.048639736191261336,
+            "precision": 0.017685851318944845,
+            "recall": 0.029265873015873013,
+            "f1_score": 0.022047832585949178
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'pos': 'static'}, dvc)",
+        "metrics": {
+            "accuracy": 0.018961253091508656,
+            "precision": 0.013925095585679526,
+            "recall": 0.013408858166922681,
+            "f1_score": 0.013412603485072352
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'pos': 'static'}, dvc)",
+        "metrics": {
+            "accuracy": 0.0651277823577906,
+            "precision": 0.038818115080902806,
+            "recall": 0.051396731267923455,
+            "f1_score": 0.03712929356642253
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'pos': 'static'}, dvc)",
+        "metrics": {
+            "accuracy": 0.12448474855729597,
+            "precision": 0.19414742901455503,
+            "recall": 0.10940520433444961,
+            "f1_score": 0.05671518445112822
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'pos': 'static'}, dvc)",
+        "metrics": {
+            "accuracy": 0.13107996702390767,
+            "precision": 0.12849655992541306,
+            "recall": 0.11009964698335084,
+            "f1_score": 0.085630215650579
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "10:Gaussian Noise",
+        "key": "(freq, butter2MHz_Fs100MHz, {'pos': 'moving'}, dvc)",
+        "metrics": {
+            "accuracy": 0.8425849212924607,
+            "precision": 0.8411268090160867,
+            "recall": 0.8383075990404469,
+            "f1_score": 0.8380222457035846
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "20:Gaussian Noise",
+        "key": "(freq, butter2MHz_Fs100MHz, {'pos': 'moving'}, dvc)",
+        "metrics": {
+            "accuracy": 0.8616404308202155,
+            "precision": 0.8639098479630337,
+            "recall": 0.857270562086191,
+            "f1_score": 0.8589256640047065
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "30:Gaussian Noise",
+        "key": "(freq, butter2MHz_Fs100MHz, {'pos': 'moving'}, dvc)",
+        "metrics": {
+            "accuracy": 0.8608119304059652,
+            "precision": 0.8632902674916435,
+            "recall": 0.8564643803019903,
+            "f1_score": 0.8580848395837447
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter2MHz_Fs100MHz, {'pos': 'moving'}, dvc)",
+        "metrics": {
+            "accuracy": 0.0024855012427506215,
+            "precision": 0.002,
+            "recall": 0.0020161290322580645,
+            "f1_score": 0.002008032128514056
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter2MHz_Fs100MHz, {'pos': 'moving'}, dvc)",
+        "metrics": {
+            "accuracy": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter2MHz_Fs100MHz, {'pos': 'moving'}, dvc)",
+        "metrics": {
+            "accuracy": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(freq, butter2MHz_Fs100MHz, {'pos': 'moving'}, dvc)",
+        "metrics": {
+            "accuracy": 0.08450704225352113,
+            "precision": 0.10925764484978541,
+            "recall": 0.07014654998525967,
+            "f1_score": 0.03584788866581526
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(freq, butter2MHz_Fs100MHz, {'pos': 'moving'}, dvc)",
+        "metrics": {
+            "accuracy": 0.08285004142502071,
+            "precision": 0.0485188261351052,
+            "recall": 0.08396946564885495,
+            "f1_score": 0.013916218020107828
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(freq, butter2MHz_Fs100MHz, {'pos': 'moving'}, dvc)",
+        "metrics": {
+            "accuracy": 0.10190555095277548,
+            "precision": 0.046989505493827195,
+            "recall": 0.09762746164069107,
+            "f1_score": 0.03477801960262982
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "10:Gaussian Noise",
+        "key": "(IQSplit, butter2MHz_Fs100MHz, {'pos': 'moving'}, dvc)",
+        "metrics": {
+            "accuracy": 0.6934548467274234,
+            "precision": 0.687367174839021,
+            "recall": 0.7044338446759038,
+            "f1_score": 0.6934063557630288
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "20:Gaussian Noise",
+        "key": "(IQSplit, butter2MHz_Fs100MHz, {'pos': 'moving'}, dvc)",
+        "metrics": {
+            "accuracy": 0.7423363711681856,
+            "precision": 0.731130997344236,
+            "recall": 0.748661469349308,
+            "f1_score": 0.736213434382358
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "30:Gaussian Noise",
+        "key": "(IQSplit, butter2MHz_Fs100MHz, {'pos': 'moving'}, dvc)",
+        "metrics": {
+            "accuracy": 0.7539353769676885,
+            "precision": 0.7423745977463078,
+            "recall": 0.7628013536377498,
+            "f1_score": 0.7487381951298383
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter2MHz_Fs100MHz, {'pos': 'moving'}, dvc)",
+        "metrics": {
+            "accuracy": 0.043910521955260975,
+            "precision": 0.021544715447154472,
+            "recall": 0.024812734082397005,
+            "f1_score": 0.023063533507397743
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter2MHz_Fs100MHz, {'pos': 'moving'}, dvc)",
+        "metrics": {
+            "accuracy": 0.024855012427506214,
+            "precision": 0.01773049645390071,
+            "recall": 0.014044943820224719,
+            "f1_score": 0.01567398119122257
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter2MHz_Fs100MHz, {'pos': 'moving'}, dvc)",
+        "metrics": {
+            "accuracy": 0.00579950289975145,
+            "precision": 0.0065543071161048684,
+            "recall": 0.0032771535580524342,
+            "f1_score": 0.004369538077403245
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(IQSplit, butter2MHz_Fs100MHz, {'pos': 'moving'}, dvc)",
+        "metrics": {
+            "accuracy": 0.07125103562551781,
+            "precision": 0.034163700545873865,
+            "recall": 0.05997383246199456,
+            "f1_score": 0.03917993797420164
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(IQSplit, butter2MHz_Fs100MHz, {'pos': 'moving'}, dvc)",
+        "metrics": {
+            "accuracy": 0.11681855840927921,
+            "precision": 0.11085275049746453,
+            "recall": 0.10309886614334822,
+            "f1_score": 0.044929714456314364
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(IQSplit, butter2MHz_Fs100MHz, {'pos': 'moving'}, dvc)",
+        "metrics": {
+            "accuracy": 0.11433305716652858,
+            "precision": 0.09342228990965913,
+            "recall": 0.09908955454297308,
+            "f1_score": 0.07179351871581159
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "10:Gaussian Noise",
+        "key": "(freq, butter4MHz_Fs100MHz, {'pos': 'static', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.9009584664536742,
+            "precision": 0.6887776217135823,
+            "recall": 0.6569033171879343,
+            "f1_score": 0.667667339273967
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "20:Gaussian Noise",
+        "key": "(freq, butter4MHz_Fs100MHz, {'pos': 'static', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.9073482428115016,
+            "precision": 0.6835077130569953,
+            "recall": 0.6611266721301418,
+            "f1_score": 0.6693529969919422
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "30:Gaussian Noise",
+        "key": "(freq, butter4MHz_Fs100MHz, {'pos': 'static', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.9105431309904153,
+            "precision": 0.6777060863223899,
+            "recall": 0.663086116194849,
+            "f1_score": 0.6686634455133788
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter4MHz_Fs100MHz, {'pos': 'static', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.007987220447284345,
+            "precision": 0.0037544454020426556,
+            "recall": 0.004826752195173248,
+            "f1_score": 0.004201274536202767
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter4MHz_Fs100MHz, {'pos': 'static', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.001597444089456869,
+            "precision": 0.0004638218923933209,
+            "recall": 0.000999000999000999,
+            "f1_score": 0.0006335128286347799
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter4MHz_Fs100MHz, {'pos': 'static', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(freq, butter4MHz_Fs100MHz, {'pos': 'static', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.06070287539936102,
+            "precision": 0.018375241779497096,
+            "recall": 0.0448642266824085,
+            "f1_score": 0.02607204116638079
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(freq, butter4MHz_Fs100MHz, {'pos': 'static', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.12300319488817892,
+            "precision": 0.011182108626198083,
+            "recall": 0.09090909090909091,
+            "f1_score": 0.01991465149359886
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(freq, butter4MHz_Fs100MHz, {'pos': 'static', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.13738019169329074,
+            "precision": 0.13614169190583783,
+            "recall": 0.10837920944303922,
+            "f1_score": 0.0500321446178714
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "10:Gaussian Noise",
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'pos': 'static', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.8370607028753994,
+            "precision": 0.6367741845861276,
+            "recall": 0.6325450313671415,
+            "f1_score": 0.6313166611369371
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "20:Gaussian Noise",
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'pos': 'static', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.8370607028753994,
+            "precision": 0.6347362233725871,
+            "recall": 0.629420615766049,
+            "f1_score": 0.6284479578073738
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "30:Gaussian Noise",
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'pos': 'static', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.8434504792332268,
+            "precision": 0.6396695443444985,
+            "recall": 0.6359258682811938,
+            "f1_score": 0.6345956460771446
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'pos': 'static', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.10702875399361023,
+            "precision": 0.0663664006682607,
+            "recall": 0.0653276378513068,
+            "f1_score": 0.06548447190674898
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'pos': 'static', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.07348242811501597,
+            "precision": 0.047520661157024795,
+            "recall": 0.04401913875598086,
+            "f1_score": 0.04570293094883259
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'pos': 'static', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.020766773162939296,
+            "precision": 0.022061055827289594,
+            "recall": 0.025677830940988834,
+            "f1_score": 0.016869514820334493
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'pos': 'static', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.23162939297124602,
+            "precision": 0.1028275226959329,
+            "recall": 0.15702096946116084,
+            "f1_score": 0.10137476405649398
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'pos': 'static', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.25559105431309903,
+            "precision": 0.3139720558882235,
+            "recall": 0.17136547662863452,
+            "f1_score": 0.1264243388892923
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(IQSplit, butter4MHz_Fs100MHz, {'pos': 'static', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.17412140575079874,
+            "precision": 0.14670739278668793,
+            "recall": 0.13427682931940546,
+            "f1_score": 0.08753097446065429
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "10:Gaussian Noise",
+        "key": "(freq, butter4MHz_Fs10MHz, {'pos': 'moving', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.7829457364341085,
+            "precision": 0.5782991998289178,
+            "recall": 0.5845877591045853,
+            "f1_score": 0.5810226503346129
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "20:Gaussian Noise",
+        "key": "(freq, butter4MHz_Fs10MHz, {'pos': 'moving', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.8604651162790697,
+            "precision": 0.6634618742312955,
+            "recall": 0.6574182038911086,
+            "f1_score": 0.6596468515102772
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "30:Gaussian Noise",
+        "key": "(freq, butter4MHz_Fs10MHz, {'pos': 'moving', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.8666666666666667,
+            "precision": 0.6638584936984507,
+            "recall": 0.6687046334278488,
+            "f1_score": 0.6657185336110751
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter4MHz_Fs10MHz, {'pos': 'moving', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.012403100775193798,
+            "precision": 0.013888888888888888,
+            "recall": 0.006944444444444444,
+            "f1_score": 0.009259259259259259
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter4MHz_Fs10MHz, {'pos': 'moving', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.004651162790697674,
+            "precision": 0.008928571428571428,
+            "recall": 0.0026041666666666665,
+            "f1_score": 0.004032258064516128
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": false,
+        "target_class": null,
+        "key": "(freq, butter4MHz_Fs10MHz, {'pos': 'moving', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1_score": 0.0
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(freq, butter4MHz_Fs10MHz, {'pos': 'moving', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.2310077519379845,
+            "precision": 0.2035714285714286,
+            "recall": 0.14082977576789715,
+            "f1_score": 0.10439118605275433
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(freq, butter4MHz_Fs10MHz, {'pos': 'moving', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.24651162790697675,
+            "precision": 0.2780634192586748,
+            "recall": 0.14531911649636378,
+            "f1_score": 0.1146615838136306
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(freq, butter4MHz_Fs10MHz, {'pos': 'moving', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.15503875968992248,
+            "precision": 0.012939958592132504,
+            "recall": 0.08333333333333333,
+            "f1_score": 0.022401433691756272
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "10:Gaussian Noise",
+        "key": "(IQSplit, butter2MHz_Fs100MHz, {'pos': 'moving', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.7736434108527132,
+            "precision": 0.556216393733059,
+            "recall": 0.5753199294271929,
+            "f1_score": 0.5618373505498908
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "20:Gaussian Noise",
+        "key": "(IQSplit, butter2MHz_Fs100MHz, {'pos': 'moving', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.786046511627907,
+            "precision": 0.5846907242130994,
+            "recall": 0.6068941649478703,
+            "f1_score": 0.591007385128019
+        }
+    },
+    {
+        "attack_type": "SNR",
+        "perturbation": "30:Gaussian Noise",
+        "key": "(IQSplit, butter2MHz_Fs100MHz, {'pos': 'moving', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.7875968992248062,
+            "precision": 0.5628924742050837,
+            "recall": 0.5863400301669934,
+            "f1_score": 0.5698485185741463
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter2MHz_Fs100MHz, {'pos': 'moving', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.06976744186046512,
+            "precision": 0.057986111111111106,
+            "recall": 0.039071637426900584,
+            "f1_score": 0.046608527131782936
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter2MHz_Fs100MHz, {'pos': 'moving', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.040310077519379844,
+            "precision": 0.05555555555555555,
+            "recall": 0.022569444444444444,
+            "f1_score": 0.03209876543209876
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": false,
+        "target_class": null,
+        "key": "(IQSplit, butter2MHz_Fs100MHz, {'pos': 'moving', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.024806201550387597,
+            "precision": 0.03508771929824561,
+            "recall": 0.013888888888888888,
+            "f1_score": 0.019900497512437814
+        }
+    },
+    {
+        "attack_type": "fgsm",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(IQSplit, butter2MHz_Fs100MHz, {'pos': 'moving', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.17829457364341086,
+            "precision": 0.0819458794323188,
+            "recall": 0.0976608187134503,
+            "f1_score": 0.07605636224057277
+        }
+    },
+    {
+        "attack_type": "pgd",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(IQSplit, butter2MHz_Fs100MHz, {'pos': 'moving', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.2310077519379845,
+            "precision": 0.1423048395671486,
+            "recall": 0.12593201754385966,
+            "f1_score": 0.08509307362243353
+        }
+    },
+    {
+        "attack_type": "cw",
+        "targeted": true,
+        "target_class": 11,
+        "key": "(IQSplit, butter2MHz_Fs100MHz, {'pos': 'moving', 'antenna_side': 'right'}, dvc)",
+        "metrics": {
+            "accuracy": 0.2,
+            "precision": 0.13910772213229985,
+            "recall": 0.1122177773493563,
+            "f1_score": 0.08452590018620386
+        }
+    }
+]

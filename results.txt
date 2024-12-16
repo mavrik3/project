@@ -1,0 +1,144 @@
+mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:0.9475409984588623
+mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:0.9213114976882935
+mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:0.9442622661590576
+mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:0.9278688430786133
+mode:freq, config:butter2MHz_Fs5MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:0.9049180150032043
+mode:freq, config:butter1MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:0.9311475157737732
+mode:freq, config:butter1MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:0.908196747303009
+mode:freq, config:butter1MHz_Fs5MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:0.9147540926933289
+mode:freq, config:butter1MHz_Fs2.5MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:0.908196747303009
+mode:IQSplit, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:0.8065573573112488
+mode:IQSplit, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:0.688524603843689
+mode:IQSplit, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:0.77704918384552
+mode:IQSplit, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:0.6983606815338135
+mode:IQSplit, config:butter2MHz_Fs5MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:0.5049180388450623
+mode:IQSplit, config:butter1MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:0.8327868580818176
+mode:IQSplit, config:butter1MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:0.7049180269241333
+mode:IQSplit, config:butter1MHz_Fs5MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:0.6754098534584045
+mode:IQSplit, config:butter1MHz_Fs2.5MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:0.5278688669204712
+mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, target:pos, accuracy:0.8125
+mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, target:pos, accuracy:0.800000011920929
+mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, target:pos, accuracy:0.8500000238418579
+mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, target:pos, accuracy:0.78125
+mode:freq, config:butter2MHz_Fs5MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, target:pos, accuracy:0.768750011920929
+mode:freq, config:butter1MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, target:pos, accuracy:0.8062499761581421
+mode:freq, config:butter1MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, target:pos, accuracy:0.762499988079071
+mode:freq, config:butter1MHz_Fs5MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, target:pos, accuracy:0.78125
+mode:freq, config:butter1MHz_Fs2.5MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, target:pos, accuracy:0.7437499761581421
+mode:IQSplit, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, target:pos, accuracy:0.856249988079071
+mode:IQSplit, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, target:pos, accuracy:0.8999999761581421
+mode:IQSplit, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, target:pos, accuracy:0.887499988079071
+mode:IQSplit, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, target:pos, accuracy:0.862500011920929
+mode:IQSplit, config:butter2MHz_Fs5MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, target:pos, accuracy:0.8500000238418579
+mode:IQSplit, config:butter1MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, target:pos, accuracy:0.893750011920929
+mode:IQSplit, config:butter1MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, target:pos, accuracy:0.8374999761581421
+mode:IQSplit, config:butter1MHz_Fs5MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, target:pos, accuracy:0.762499988079071
+mode:IQSplit, config:butter1MHz_Fs2.5MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'dvc': '6'}, target:pos, accuracy:0.78125
+mode:freq, config:butter4MHz_Fs100MHz, query:{'antenna': '1', 'txPower': 9.0}, target:pos, accuracy:0.554951548576355
+mode:freq, config:butter4MHz_Fs10MHz, query:{'antenna': '1', 'txPower': 9.0}, target:pos, accuracy:0.49373671412467957
+mode:freq, config:butter2MHz_Fs100MHz, query:{'antenna': '1', 'txPower': 9.0}, target:pos, accuracy:0.5587331652641296
+mode:freq, config:butter2MHz_Fs10MHz, query:{'antenna': '1', 'txPower': 9.0}, target:pos, accuracy:0.5246986746788025
+mode:freq, config:butter2MHz_Fs5MHz, query:{'antenna': '1', 'txPower': 9.0}, target:pos, accuracy:0.49799102544784546
+mode:freq, config:butter1MHz_Fs100MHz, query:{'antenna': '1', 'txPower': 9.0}, target:pos, accuracy:0.6357834935188293
+mode:freq, config:butter1MHz_Fs10MHz, query:{'antenna': '1', 'txPower': 9.0}, target:pos, accuracy:0.5235168933868408
+mode:freq, config:butter1MHz_Fs5MHz, query:{'antenna': '1', 'txPower': 9.0}, target:pos, accuracy:0.46135663986206055
+mode:freq, config:butter1MHz_Fs2.5MHz, query:{'antenna': '1', 'txPower': 9.0}, target:pos, accuracy:0.4783739149570465
+mode:IQSplit, config:butter4MHz_Fs100MHz, query:{'antenna': '1', 'txPower': 9.0}, target:pos, accuracy:0.499645471572876
+mode:IQSplit, config:butter4MHz_Fs10MHz, query:{'antenna': '1', 'txPower': 9.0}, target:pos, accuracy:0.4081777334213257
+mode:IQSplit, config:butter2MHz_Fs100MHz, query:{'antenna': '1', 'txPower': 9.0}, target:pos, accuracy:0.4634838104248047
+mode:IQSplit, config:butter2MHz_Fs10MHz, query:{'antenna': '1', 'txPower': 9.0}, target:pos, accuracy:0.4313400983810425
+mode:IQSplit, config:butter2MHz_Fs5MHz, query:{'antenna': '1', 'txPower': 9.0}, target:pos, accuracy:0.40108722448349
+mode:IQSplit, config:butter1MHz_Fs100MHz, query:{'antenna': '1', 'txPower': 9.0}, target:pos, accuracy:0.46442919969558716
+mode:IQSplit, config:butter1MHz_Fs10MHz, query:{'antenna': '1', 'txPower': 9.0}, target:pos, accuracy:0.404396116733551
+mode:IQSplit, config:butter1MHz_Fs5MHz, query:{'antenna': '1', 'txPower': 9.0}, target:pos, accuracy:0.3963601887226105
+mode:IQSplit, config:butter1MHz_Fs2.5MHz, query:{'antenna': '1', 'txPower': 9.0}, target:pos, accuracy:0.35523515939712524
+mode:freq, config:butter4MHz_Fs100MHz, query:{'antenna': '1', 'txPower': 9.0}, target:dvc, accuracy:0.9061687588691711
+mode:freq, config:butter4MHz_Fs10MHz, query:{'antenna': '1', 'txPower': 9.0}, target:dvc, accuracy:0.8924604058265686
+mode:freq, config:butter2MHz_Fs100MHz, query:{'antenna': '1', 'txPower': 9.0}, target:dvc, accuracy:0.9123138785362244
+mode:freq, config:butter2MHz_Fs10MHz, query:{'antenna': '1', 'txPower': 9.0}, target:dvc, accuracy:0.8768612742424011
+mode:freq, config:butter2MHz_Fs5MHz, query:{'antenna': '1', 'txPower': 9.0}, target:dvc, accuracy:0.8898605704307556
+mode:freq, config:butter1MHz_Fs100MHz, query:{'antenna': '1', 'txPower': 9.0}, target:dvc, accuracy:0.8952966332435608
+mode:freq, config:butter1MHz_Fs10MHz, query:{'antenna': '1', 'txPower': 9.0}, target:dvc, accuracy:0.8449538946151733
+mode:freq, config:butter1MHz_Fs5MHz, query:{'antenna': '1', 'txPower': 9.0}, target:dvc, accuracy:0.8458993434906006
+mode:freq, config:butter1MHz_Fs2.5MHz, query:{'antenna': '1', 'txPower': 9.0}, target:dvc, accuracy:0.848735511302948
+mode:IQSplit, config:butter4MHz_Fs100MHz, query:{'antenna': '1', 'txPower': 9.0}, target:dvc, accuracy:0.805483341217041
+mode:IQSplit, config:butter4MHz_Fs10MHz, query:{'antenna': '1', 'txPower': 9.0}, target:dvc, accuracy:0.7634128928184509
+mode:IQSplit, config:butter2MHz_Fs100MHz, query:{'antenna': '1', 'txPower': 9.0}, target:dvc, accuracy:0.7688489556312561
+mode:IQSplit, config:butter2MHz_Fs10MHz, query:{'antenna': '1', 'txPower': 9.0}, target:dvc, accuracy:0.6636728644371033
+mode:IQSplit, config:butter2MHz_Fs5MHz, query:{'antenna': '1', 'txPower': 9.0}, target:dvc, accuracy:0.5951311588287354
+mode:IQSplit, config:butter1MHz_Fs100MHz, query:{'antenna': '1', 'txPower': 9.0}, target:dvc, accuracy:0.7456865906715393
+mode:IQSplit, config:butter1MHz_Fs10MHz, query:{'antenna': '1', 'txPower': 9.0}, target:dvc, accuracy:0.6731269359588623
+mode:IQSplit, config:butter1MHz_Fs5MHz, query:{'antenna': '1', 'txPower': 9.0}, target:dvc, accuracy:0.6639092564582825
+mode:IQSplit, config:butter1MHz_Fs2.5MHz, query:{'antenna': '1', 'txPower': 9.0}, target:dvc, accuracy:0.6643819212913513
+mode:freq, config:butter4MHz_Fs100MHz, query:{'pos': 'static'}, target:dvc, accuracy:0.9117889404296875
+mode:freq, config:butter4MHz_Fs10MHz, query:{'pos': 'static'}, target:dvc, accuracy:0.9225061535835266
+mode:freq, config:butter2MHz_Fs100MHz, query:{'pos': 'static'}, target:dvc, accuracy:0.9332234263420105
+mode:freq, config:butter2MHz_Fs10MHz, query:{'pos': 'static'}, target:dvc, accuracy:0.8994229435920715
+mode:freq, config:butter2MHz_Fs5MHz, query:{'pos': 'static'}, target:dvc, accuracy:0.8507831692695618
+mode:freq, config:butter1MHz_Fs100MHz, query:{'pos': 'static'}, target:dvc, accuracy:0.9175597429275513
+mode:freq, config:butter1MHz_Fs10MHz, query:{'pos': 'static'}, target:dvc, accuracy:0.8821104764938354
+mode:freq, config:butter1MHz_Fs5MHz, query:{'pos': 'static'}, target:dvc, accuracy:0.87469083070755
+mode:freq, config:butter1MHz_Fs2.5MHz, query:{'pos': 'static'}, target:dvc, accuracy:0.8713932633399963
+mode:IQSplit, config:butter4MHz_Fs100MHz, query:{'pos': 'static'}, target:dvc, accuracy:0.8202803134918213
+mode:IQSplit, config:butter4MHz_Fs10MHz, query:{'pos': 'static'}, target:dvc, accuracy:0.653751015663147
+mode:IQSplit, config:butter2MHz_Fs100MHz, query:{'pos': 'static'}, target:dvc, accuracy:0.7699917554855347
+mode:IQSplit, config:butter2MHz_Fs10MHz, query:{'pos': 'static'}, target:dvc, accuracy:0.6966199278831482
+mode:IQSplit, config:butter2MHz_Fs5MHz, query:{'pos': 'static'}, target:dvc, accuracy:0.6735366582870483
+mode:IQSplit, config:butter1MHz_Fs100MHz, query:{'pos': 'static'}, target:dvc, accuracy:0.8128606677055359
+mode:IQSplit, config:butter1MHz_Fs10MHz, query:{'pos': 'static'}, target:dvc, accuracy:0.6306677460670471
+mode:IQSplit, config:butter1MHz_Fs5MHz, query:{'pos': 'static'}, target:dvc, accuracy:0.5284419059753418
+mode:IQSplit, config:butter1MHz_Fs2.5MHz, query:{'pos': 'static'}, target:dvc, accuracy:0.4468260407447815
+mode:freq, config:butter4MHz_Fs100MHz, query:{'pos': 'moving'}, target:dvc, accuracy:0.8533554077148438
+mode:freq, config:butter4MHz_Fs10MHz, query:{'pos': 'moving'}, target:dvc, accuracy:0.818558394908905
+mode:freq, config:butter2MHz_Fs100MHz, query:{'pos': 'moving'}, target:dvc, accuracy:0.8608119487762451
+mode:freq, config:butter2MHz_Fs10MHz, query:{'pos': 'moving'}, target:dvc, accuracy:0.8077878952026367
+mode:freq, config:butter2MHz_Fs5MHz, query:{'pos': 'moving'}, target:dvc, accuracy:0.7854183912277222
+mode:freq, config:butter1MHz_Fs100MHz, query:{'pos': 'moving'}, target:dvc, accuracy:0.847555935382843
+mode:freq, config:butter1MHz_Fs10MHz, query:{'pos': 'moving'}, target:dvc, accuracy:0.8210439085960388
+mode:freq, config:butter1MHz_Fs5MHz, query:{'pos': 'moving'}, target:dvc, accuracy:0.7812758684158325
+mode:freq, config:butter1MHz_Fs2.5MHz, query:{'pos': 'moving'}, target:dvc, accuracy:0.7821043729782104
+mode:IQSplit, config:butter4MHz_Fs100MHz, query:{'pos': 'moving'}, target:dvc, accuracy:0.6801988482475281
+mode:IQSplit, config:butter4MHz_Fs10MHz, query:{'pos': 'moving'}, target:dvc, accuracy:0.6338028311729431
+mode:IQSplit, config:butter2MHz_Fs100MHz, query:{'pos': 'moving'}, target:dvc, accuracy:0.755592405796051
+mode:IQSplit, config:butter2MHz_Fs10MHz, query:{'pos': 'moving'}, target:dvc, accuracy:0.5791217684745789
+mode:IQSplit, config:butter2MHz_Fs5MHz, query:{'pos': 'moving'}, target:dvc, accuracy:0.5020712614059448
+mode:IQSplit, config:butter1MHz_Fs100MHz, query:{'pos': 'moving'}, target:dvc, accuracy:0.7108533382415771
+mode:IQSplit, config:butter1MHz_Fs10MHz, query:{'pos': 'moving'}, target:dvc, accuracy:0.5476387739181519
+mode:IQSplit, config:butter1MHz_Fs5MHz, query:{'pos': 'moving'}, target:dvc, accuracy:0.5517812967300415
+mode:IQSplit, config:butter1MHz_Fs2.5MHz, query:{'pos': 'moving'}, target:dvc, accuracy:0.3852526843547821
+mode:freq, config:butter4MHz_Fs100MHz, query:{'pos': 'static', 'antenna_side': 'right'}, target:dvc, accuracy:0.9089456796646118
+mode:freq, config:butter4MHz_Fs10MHz, query:{'pos': 'static', 'antenna_side': 'right'}, target:dvc, accuracy:0.884984016418457
+mode:freq, config:butter2MHz_Fs100MHz, query:{'pos': 'static', 'antenna_side': 'right'}, target:dvc, accuracy:0.8977635502815247
+mode:freq, config:butter2MHz_Fs10MHz, query:{'pos': 'static', 'antenna_side': 'right'}, target:dvc, accuracy:0.9025558829307556
+mode:freq, config:butter2MHz_Fs5MHz, query:{'pos': 'static', 'antenna_side': 'right'}, target:dvc, accuracy:0.8801916837692261
+mode:freq, config:butter1MHz_Fs100MHz, query:{'pos': 'static', 'antenna_side': 'right'}, target:dvc, accuracy:0.8546326160430908
+mode:freq, config:butter1MHz_Fs10MHz, query:{'pos': 'static', 'antenna_side': 'right'}, target:dvc, accuracy:0.9025558829307556
+mode:freq, config:butter1MHz_Fs5MHz, query:{'pos': 'static', 'antenna_side': 'right'}, target:dvc, accuracy:0.8881788849830627
+mode:freq, config:butter1MHz_Fs2.5MHz, query:{'pos': 'static', 'antenna_side': 'right'}, target:dvc, accuracy:0.8769968152046204
+mode:IQSplit, config:butter4MHz_Fs100MHz, query:{'pos': 'static', 'antenna_side': 'right'}, target:dvc, accuracy:0.8418530225753784
+mode:IQSplit, config:butter4MHz_Fs10MHz, query:{'pos': 'static', 'antenna_side': 'right'}, target:dvc, accuracy:0.7619808316230774
+mode:IQSplit, config:butter2MHz_Fs100MHz, query:{'pos': 'static', 'antenna_side': 'right'}, target:dvc, accuracy:0.8130990266799927
+mode:IQSplit, config:butter2MHz_Fs10MHz, query:{'pos': 'static', 'antenna_side': 'right'}, target:dvc, accuracy:0.7044728398323059
+mode:IQSplit, config:butter2MHz_Fs5MHz, query:{'pos': 'static', 'antenna_side': 'right'}, target:dvc, accuracy:0.7156549692153931
+mode:IQSplit, config:butter1MHz_Fs100MHz, query:{'pos': 'static', 'antenna_side': 'right'}, target:dvc, accuracy:0.8322683572769165
+mode:IQSplit, config:butter1MHz_Fs10MHz, query:{'pos': 'static', 'antenna_side': 'right'}, target:dvc, accuracy:0.7140575051307678
+mode:IQSplit, config:butter1MHz_Fs5MHz, query:{'pos': 'static', 'antenna_side': 'right'}, target:dvc, accuracy:0.6389776468276978
+mode:IQSplit, config:butter1MHz_Fs2.5MHz, query:{'pos': 'static', 'antenna_side': 'right'}, target:dvc, accuracy:0.615015983581543
+mode:freq, config:butter4MHz_Fs100MHz, query:{'pos': 'moving', 'antenna_side': 'right'}, target:dvc, accuracy:0.8589147329330444
+mode:freq, config:butter4MHz_Fs10MHz, query:{'pos': 'moving', 'antenna_side': 'right'}, target:dvc, accuracy:0.8666666746139526
+mode:freq, config:butter2MHz_Fs100MHz, query:{'pos': 'moving', 'antenna_side': 'right'}, target:dvc, accuracy:0.8527131676673889
+mode:freq, config:butter2MHz_Fs10MHz, query:{'pos': 'moving', 'antenna_side': 'right'}, target:dvc, accuracy:0.8558139801025391
+mode:freq, config:butter2MHz_Fs5MHz, query:{'pos': 'moving', 'antenna_side': 'right'}, target:dvc, accuracy:0.8527131676673889
+mode:freq, config:butter1MHz_Fs100MHz, query:{'pos': 'moving', 'antenna_side': 'right'}, target:dvc, accuracy:0.8620154857635498
+mode:freq, config:butter1MHz_Fs10MHz, query:{'pos': 'moving', 'antenna_side': 'right'}, target:dvc, accuracy:0.8511627912521362
+mode:freq, config:butter1MHz_Fs5MHz, query:{'pos': 'moving', 'antenna_side': 'right'}, target:dvc, accuracy:0.8496124148368835
+mode:freq, config:butter1MHz_Fs2.5MHz, query:{'pos': 'moving', 'antenna_side': 'right'}, target:dvc, accuracy:0.8666666746139526
+mode:IQSplit, config:butter4MHz_Fs100MHz, query:{'pos': 'moving', 'antenna_side': 'right'}, target:dvc, accuracy:0.7472867965698242
+mode:IQSplit, config:butter4MHz_Fs10MHz, query:{'pos': 'moving', 'antenna_side': 'right'}, target:dvc, accuracy:0.6093023419380188
+mode:IQSplit, config:butter2MHz_Fs100MHz, query:{'pos': 'moving', 'antenna_side': 'right'}, target:dvc, accuracy:0.7922480702400208
+mode:IQSplit, config:butter2MHz_Fs10MHz, query:{'pos': 'moving', 'antenna_side': 'right'}, target:dvc, accuracy:0.6139534711837769
+mode:IQSplit, config:butter2MHz_Fs5MHz, query:{'pos': 'moving', 'antenna_side': 'right'}, target:dvc, accuracy:0.5209302306175232
+mode:IQSplit, config:butter1MHz_Fs100MHz, query:{'pos': 'moving', 'antenna_side': 'right'}, target:dvc, accuracy:0.7674418687820435
+mode:IQSplit, config:butter1MHz_Fs10MHz, query:{'pos': 'moving', 'antenna_side': 'right'}, target:dvc, accuracy:0.6945736408233643
+mode:IQSplit, config:butter1MHz_Fs5MHz, query:{'pos': 'moving', 'antenna_side': 'right'}, target:dvc, accuracy:0.5953488349914551
+mode:IQSplit, config:butter1MHz_Fs2.5MHz, query:{'pos': 'moving', 'antenna_side': 'right'}, target:dvc, accuracy:0.5891472697257996

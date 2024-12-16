@@ -1,0 +1,1354 @@
+2024-12-09 15:33:50,136 - ERROR - Error in RV_CNN: Graph execution error:
+
+Detected at node 'gradient_tape/sequential/conv1d_1/Conv1D/Conv2DBackpropInput' defined at (most recent call last):
+    File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+      return _run_code(code, main_globals, None,
+    File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+      exec(code, run_globals)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel_launcher.py", line 18, in <module>
+      app.launch_new_instance()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/traitlets/config/application.py", line 1075, in launch_instance
+      app.start()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelapp.py", line 739, in start
+      self.io_loop.start()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/tornado/platform/asyncio.py", line 205, in start
+      self.asyncio_loop.run_forever()
+    File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+      self._run_once()
+    File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+      handle._run()
+    File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+      self._context.run(self._callback, *self._args)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 545, in dispatch_queue
+      await self.process_one()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 534, in process_one
+      await dispatch(*args)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 437, in dispatch_shell
+      await result
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/ipkernel.py", line 362, in execute_request
+      await super().execute_request(stream, ident, parent)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 778, in execute_request
+      reply_content = await reply_content
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/ipkernel.py", line 449, in do_execute
+      res = shell.run_cell(
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/zmqshell.py", line 549, in run_cell
+      return super().run_cell(*args, **kwargs)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3009, in run_cell
+      result = self._run_cell(
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3064, in _run_cell
+      result = runner(coro)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/async_helpers.py", line 129, in _pseudo_sync_runner
+      coro.send(None)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3269, in run_cell_async
+      has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3448, in run_ast_nodes
+      if await self.run_code(code, result, async_=asy):
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3508, in run_code
+      exec(code_obj, self.user_global_ns, self.user_ns)
+    File "/tmp/ipykernel_2676966/998444342.py", line 789, in <module>
+      runForExperiment(df, info['target'], experiment, info, configurations)
+    File "/tmp/ipykernel_2676966/998444342.py", line 621, in runForExperiment
+      model, acc = RV_CNN(X_train, y_train_enc, X_test, y_test_enc, downSampleRate)
+    File "/tmp/ipykernel_2676966/998444342.py", line 57, in RV_CNN
+      model.fit(X_train, y_train_encoded,
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/utils/traceback_utils.py", line 65, in error_handler
+      return fn(*args, **kwargs)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1742, in fit
+      tmp_logs = self.train_function(iterator)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1338, in train_function
+      return step_function(self, iterator)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1322, in step_function
+      outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1303, in run_step
+      outputs = model.train_step(data)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1084, in train_step
+      self.optimizer.minimize(loss, self.trainable_variables, tape=tape)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/optimizers/optimizer.py", line 543, in minimize
+      grads_and_vars = self.compute_gradients(loss, var_list, tape)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/optimizers/optimizer.py", line 276, in compute_gradients
+      grads = tape.gradient(loss, var_list)
+Node: 'gradient_tape/sequential/conv1d_1/Conv1D/Conv2DBackpropInput'
+Conv2DCustomBackpropInputOp only supports NHWC.
+	 [[{{node gradient_tape/sequential/conv1d_1/Conv1D/Conv2DBackpropInput}}]] [Op:__inference_train_function_1466]
+2024-12-09 15:33:58,122 - ERROR - Error in RV_CNN: Graph execution error:
+
+Detected at node 'gradient_tape/sequential/conv1d_1/Conv1D/Conv2DBackpropInput' defined at (most recent call last):
+    File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+      return _run_code(code, main_globals, None,
+    File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+      exec(code, run_globals)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel_launcher.py", line 18, in <module>
+      app.launch_new_instance()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/traitlets/config/application.py", line 1075, in launch_instance
+      app.start()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelapp.py", line 739, in start
+      self.io_loop.start()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/tornado/platform/asyncio.py", line 205, in start
+      self.asyncio_loop.run_forever()
+    File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+      self._run_once()
+    File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+      handle._run()
+    File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+      self._context.run(self._callback, *self._args)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 545, in dispatch_queue
+      await self.process_one()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 534, in process_one
+      await dispatch(*args)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 437, in dispatch_shell
+      await result
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/ipkernel.py", line 362, in execute_request
+      await super().execute_request(stream, ident, parent)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 778, in execute_request
+      reply_content = await reply_content
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/ipkernel.py", line 449, in do_execute
+      res = shell.run_cell(
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/zmqshell.py", line 549, in run_cell
+      return super().run_cell(*args, **kwargs)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3009, in run_cell
+      result = self._run_cell(
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3064, in _run_cell
+      result = runner(coro)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/async_helpers.py", line 129, in _pseudo_sync_runner
+      coro.send(None)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3269, in run_cell_async
+      has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3448, in run_ast_nodes
+      if await self.run_code(code, result, async_=asy):
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3508, in run_code
+      exec(code_obj, self.user_global_ns, self.user_ns)
+    File "/tmp/ipykernel_2676966/998444342.py", line 789, in <module>
+      runForExperiment(df, info['target'], experiment, info, configurations)
+    File "/tmp/ipykernel_2676966/998444342.py", line 621, in runForExperiment
+      model, acc = RV_CNN(X_train, y_train_enc, X_test, y_test_enc, downSampleRate)
+    File "/tmp/ipykernel_2676966/998444342.py", line 57, in RV_CNN
+      model.fit(X_train, y_train_encoded,
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/utils/traceback_utils.py", line 65, in error_handler
+      return fn(*args, **kwargs)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1742, in fit
+      tmp_logs = self.train_function(iterator)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1338, in train_function
+      return step_function(self, iterator)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1322, in step_function
+      outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1303, in run_step
+      outputs = model.train_step(data)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1084, in train_step
+      self.optimizer.minimize(loss, self.trainable_variables, tape=tape)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/optimizers/optimizer.py", line 543, in minimize
+      grads_and_vars = self.compute_gradients(loss, var_list, tape)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/optimizers/optimizer.py", line 276, in compute_gradients
+      grads = tape.gradient(loss, var_list)
+Node: 'gradient_tape/sequential/conv1d_1/Conv1D/Conv2DBackpropInput'
+Conv2DCustomBackpropInputOp only supports NHWC.
+	 [[{{node gradient_tape/sequential/conv1d_1/Conv1D/Conv2DBackpropInput}}]] [Op:__inference_train_function_2933]
+2024-12-09 15:34:09,022 - ERROR - Error in RV_CNN: Graph execution error:
+
+Detected at node 'gradient_tape/sequential/conv1d_1/Conv1D/Conv2DBackpropInput' defined at (most recent call last):
+    File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+      return _run_code(code, main_globals, None,
+    File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+      exec(code, run_globals)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel_launcher.py", line 18, in <module>
+      app.launch_new_instance()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/traitlets/config/application.py", line 1075, in launch_instance
+      app.start()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelapp.py", line 739, in start
+      self.io_loop.start()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/tornado/platform/asyncio.py", line 205, in start
+      self.asyncio_loop.run_forever()
+    File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+      self._run_once()
+    File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+      handle._run()
+    File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+      self._context.run(self._callback, *self._args)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 545, in dispatch_queue
+      await self.process_one()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 534, in process_one
+      await dispatch(*args)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 437, in dispatch_shell
+      await result
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/ipkernel.py", line 362, in execute_request
+      await super().execute_request(stream, ident, parent)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 778, in execute_request
+      reply_content = await reply_content
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/ipkernel.py", line 449, in do_execute
+      res = shell.run_cell(
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/zmqshell.py", line 549, in run_cell
+      return super().run_cell(*args, **kwargs)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3009, in run_cell
+      result = self._run_cell(
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3064, in _run_cell
+      result = runner(coro)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/async_helpers.py", line 129, in _pseudo_sync_runner
+      coro.send(None)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3269, in run_cell_async
+      has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3448, in run_ast_nodes
+      if await self.run_code(code, result, async_=asy):
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3508, in run_code
+      exec(code_obj, self.user_global_ns, self.user_ns)
+    File "/tmp/ipykernel_2676966/998444342.py", line 789, in <module>
+      runForExperiment(df, info['target'], experiment, info, configurations)
+    File "/tmp/ipykernel_2676966/998444342.py", line 621, in runForExperiment
+      model, acc = RV_CNN(X_train, y_train_enc, X_test, y_test_enc, downSampleRate)
+    File "/tmp/ipykernel_2676966/998444342.py", line 57, in RV_CNN
+      model.fit(X_train, y_train_encoded,
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/utils/traceback_utils.py", line 65, in error_handler
+      return fn(*args, **kwargs)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1742, in fit
+      tmp_logs = self.train_function(iterator)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1338, in train_function
+      return step_function(self, iterator)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1322, in step_function
+      outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1303, in run_step
+      outputs = model.train_step(data)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1084, in train_step
+      self.optimizer.minimize(loss, self.trainable_variables, tape=tape)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/optimizers/optimizer.py", line 543, in minimize
+      grads_and_vars = self.compute_gradients(loss, var_list, tape)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/optimizers/optimizer.py", line 276, in compute_gradients
+      grads = tape.gradient(loss, var_list)
+Node: 'gradient_tape/sequential/conv1d_1/Conv1D/Conv2DBackpropInput'
+Conv2DCustomBackpropInputOp only supports NHWC.
+	 [[{{node gradient_tape/sequential/conv1d_1/Conv1D/Conv2DBackpropInput}}]] [Op:__inference_train_function_4400]
+2024-12-09 15:34:17,074 - ERROR - Error in RV_CNN: Graph execution error:
+
+Detected at node 'gradient_tape/sequential/conv1d_1/Conv1D/Conv2DBackpropInput' defined at (most recent call last):
+    File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+      return _run_code(code, main_globals, None,
+    File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+      exec(code, run_globals)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel_launcher.py", line 18, in <module>
+      app.launch_new_instance()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/traitlets/config/application.py", line 1075, in launch_instance
+      app.start()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelapp.py", line 739, in start
+      self.io_loop.start()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/tornado/platform/asyncio.py", line 205, in start
+      self.asyncio_loop.run_forever()
+    File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+      self._run_once()
+    File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+      handle._run()
+    File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+      self._context.run(self._callback, *self._args)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 545, in dispatch_queue
+      await self.process_one()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 534, in process_one
+      await dispatch(*args)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 437, in dispatch_shell
+      await result
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/ipkernel.py", line 362, in execute_request
+      await super().execute_request(stream, ident, parent)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 778, in execute_request
+      reply_content = await reply_content
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/ipkernel.py", line 449, in do_execute
+      res = shell.run_cell(
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/zmqshell.py", line 549, in run_cell
+      return super().run_cell(*args, **kwargs)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3009, in run_cell
+      result = self._run_cell(
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3064, in _run_cell
+      result = runner(coro)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/async_helpers.py", line 129, in _pseudo_sync_runner
+      coro.send(None)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3269, in run_cell_async
+      has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3448, in run_ast_nodes
+      if await self.run_code(code, result, async_=asy):
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3508, in run_code
+      exec(code_obj, self.user_global_ns, self.user_ns)
+    File "/tmp/ipykernel_2676966/998444342.py", line 789, in <module>
+      runForExperiment(df, info['target'], experiment, info, configurations)
+    File "/tmp/ipykernel_2676966/998444342.py", line 621, in runForExperiment
+      model, acc = RV_CNN(X_train, y_train_enc, X_test, y_test_enc, downSampleRate)
+    File "/tmp/ipykernel_2676966/998444342.py", line 57, in RV_CNN
+      model.fit(X_train, y_train_encoded,
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/utils/traceback_utils.py", line 65, in error_handler
+      return fn(*args, **kwargs)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1742, in fit
+      tmp_logs = self.train_function(iterator)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1338, in train_function
+      return step_function(self, iterator)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1322, in step_function
+      outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1303, in run_step
+      outputs = model.train_step(data)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1084, in train_step
+      self.optimizer.minimize(loss, self.trainable_variables, tape=tape)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/optimizers/optimizer.py", line 543, in minimize
+      grads_and_vars = self.compute_gradients(loss, var_list, tape)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/optimizers/optimizer.py", line 276, in compute_gradients
+      grads = tape.gradient(loss, var_list)
+Node: 'gradient_tape/sequential/conv1d_1/Conv1D/Conv2DBackpropInput'
+Conv2DCustomBackpropInputOp only supports NHWC.
+	 [[{{node gradient_tape/sequential/conv1d_1/Conv1D/Conv2DBackpropInput}}]] [Op:__inference_train_function_5867]
+2024-12-09 15:40:30,803 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:40:30,803 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:40:30,803 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:40:30,803 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:40:42,086 - ERROR - Error in RV_CNN: Graph execution error:
+
+Detected at node 'gradient_tape/sequential/conv1d_1/Conv1D/Conv2DBackpropInput' defined at (most recent call last):
+    File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+      return _run_code(code, main_globals, None,
+    File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+      exec(code, run_globals)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel_launcher.py", line 18, in <module>
+      app.launch_new_instance()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/traitlets/config/application.py", line 1075, in launch_instance
+      app.start()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelapp.py", line 739, in start
+      self.io_loop.start()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/tornado/platform/asyncio.py", line 205, in start
+      self.asyncio_loop.run_forever()
+    File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+      self._run_once()
+    File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+      handle._run()
+    File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+      self._context.run(self._callback, *self._args)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 545, in dispatch_queue
+      await self.process_one()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 534, in process_one
+      await dispatch(*args)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 437, in dispatch_shell
+      await result
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/ipkernel.py", line 362, in execute_request
+      await super().execute_request(stream, ident, parent)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 778, in execute_request
+      reply_content = await reply_content
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/ipkernel.py", line 449, in do_execute
+      res = shell.run_cell(
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/zmqshell.py", line 549, in run_cell
+      return super().run_cell(*args, **kwargs)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3009, in run_cell
+      result = self._run_cell(
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3064, in _run_cell
+      result = runner(coro)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/async_helpers.py", line 129, in _pseudo_sync_runner
+      coro.send(None)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3269, in run_cell_async
+      has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3448, in run_ast_nodes
+      if await self.run_code(code, result, async_=asy):
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3508, in run_code
+      exec(code_obj, self.user_global_ns, self.user_ns)
+    File "/tmp/ipykernel_2677244/2012493764.py", line 789, in <module>
+      runForExperiment(df, info['target'], experiment, info, configurations)
+    File "/tmp/ipykernel_2677244/2012493764.py", line 621, in runForExperiment
+      model, acc = RV_CNN(X_train, y_train_enc, X_test, y_test_enc, downSampleRate)
+    File "/tmp/ipykernel_2677244/2012493764.py", line 57, in RV_CNN
+      model.fit(X_train, y_train_encoded,
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/utils/traceback_utils.py", line 65, in error_handler
+      return fn(*args, **kwargs)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1742, in fit
+      tmp_logs = self.train_function(iterator)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1338, in train_function
+      return step_function(self, iterator)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1322, in step_function
+      outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1303, in run_step
+      outputs = model.train_step(data)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1084, in train_step
+      self.optimizer.minimize(loss, self.trainable_variables, tape=tape)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/optimizers/optimizer.py", line 543, in minimize
+      grads_and_vars = self.compute_gradients(loss, var_list, tape)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/optimizers/optimizer.py", line 276, in compute_gradients
+      grads = tape.gradient(loss, var_list)
+Node: 'gradient_tape/sequential/conv1d_1/Conv1D/Conv2DBackpropInput'
+Conv2DCustomBackpropInputOp only supports NHWC.
+	 [[{{node gradient_tape/sequential/conv1d_1/Conv1D/Conv2DBackpropInput}}]] [Op:__inference_train_function_1466]
+2024-12-09 15:40:50,085 - ERROR - Error in RV_CNN: Graph execution error:
+
+Detected at node 'gradient_tape/sequential/conv1d_1/Conv1D/Conv2DBackpropInput' defined at (most recent call last):
+    File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+      return _run_code(code, main_globals, None,
+    File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+      exec(code, run_globals)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel_launcher.py", line 18, in <module>
+      app.launch_new_instance()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/traitlets/config/application.py", line 1075, in launch_instance
+      app.start()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelapp.py", line 739, in start
+      self.io_loop.start()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/tornado/platform/asyncio.py", line 205, in start
+      self.asyncio_loop.run_forever()
+    File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+      self._run_once()
+    File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+      handle._run()
+    File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+      self._context.run(self._callback, *self._args)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 545, in dispatch_queue
+      await self.process_one()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 534, in process_one
+      await dispatch(*args)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 437, in dispatch_shell
+      await result
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/ipkernel.py", line 362, in execute_request
+      await super().execute_request(stream, ident, parent)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 778, in execute_request
+      reply_content = await reply_content
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/ipkernel.py", line 449, in do_execute
+      res = shell.run_cell(
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/zmqshell.py", line 549, in run_cell
+      return super().run_cell(*args, **kwargs)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3009, in run_cell
+      result = self._run_cell(
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3064, in _run_cell
+      result = runner(coro)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/async_helpers.py", line 129, in _pseudo_sync_runner
+      coro.send(None)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3269, in run_cell_async
+      has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3448, in run_ast_nodes
+      if await self.run_code(code, result, async_=asy):
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3508, in run_code
+      exec(code_obj, self.user_global_ns, self.user_ns)
+    File "/tmp/ipykernel_2677244/2012493764.py", line 789, in <module>
+      runForExperiment(df, info['target'], experiment, info, configurations)
+    File "/tmp/ipykernel_2677244/2012493764.py", line 621, in runForExperiment
+      model, acc = RV_CNN(X_train, y_train_enc, X_test, y_test_enc, downSampleRate)
+    File "/tmp/ipykernel_2677244/2012493764.py", line 57, in RV_CNN
+      model.fit(X_train, y_train_encoded,
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/utils/traceback_utils.py", line 65, in error_handler
+      return fn(*args, **kwargs)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1742, in fit
+      tmp_logs = self.train_function(iterator)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1338, in train_function
+      return step_function(self, iterator)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1322, in step_function
+      outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1303, in run_step
+      outputs = model.train_step(data)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1084, in train_step
+      self.optimizer.minimize(loss, self.trainable_variables, tape=tape)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/optimizers/optimizer.py", line 543, in minimize
+      grads_and_vars = self.compute_gradients(loss, var_list, tape)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/optimizers/optimizer.py", line 276, in compute_gradients
+      grads = tape.gradient(loss, var_list)
+Node: 'gradient_tape/sequential/conv1d_1/Conv1D/Conv2DBackpropInput'
+Conv2DCustomBackpropInputOp only supports NHWC.
+	 [[{{node gradient_tape/sequential/conv1d_1/Conv1D/Conv2DBackpropInput}}]] [Op:__inference_train_function_2933]
+2024-12-09 15:41:01,060 - ERROR - Error in RV_CNN: Graph execution error:
+
+Detected at node 'gradient_tape/sequential/conv1d_1/Conv1D/Conv2DBackpropInput' defined at (most recent call last):
+    File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+      return _run_code(code, main_globals, None,
+    File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+      exec(code, run_globals)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel_launcher.py", line 18, in <module>
+      app.launch_new_instance()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/traitlets/config/application.py", line 1075, in launch_instance
+      app.start()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelapp.py", line 739, in start
+      self.io_loop.start()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/tornado/platform/asyncio.py", line 205, in start
+      self.asyncio_loop.run_forever()
+    File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+      self._run_once()
+    File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+      handle._run()
+    File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+      self._context.run(self._callback, *self._args)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 545, in dispatch_queue
+      await self.process_one()
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 534, in process_one
+      await dispatch(*args)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 437, in dispatch_shell
+      await result
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/ipkernel.py", line 362, in execute_request
+      await super().execute_request(stream, ident, parent)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/kernelbase.py", line 778, in execute_request
+      reply_content = await reply_content
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/ipkernel.py", line 449, in do_execute
+      res = shell.run_cell(
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/ipykernel/zmqshell.py", line 549, in run_cell
+      return super().run_cell(*args, **kwargs)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3009, in run_cell
+      result = self._run_cell(
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3064, in _run_cell
+      result = runner(coro)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/async_helpers.py", line 129, in _pseudo_sync_runner
+      coro.send(None)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3269, in run_cell_async
+      has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3448, in run_ast_nodes
+      if await self.run_code(code, result, async_=asy):
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/IPython/core/interactiveshell.py", line 3508, in run_code
+      exec(code_obj, self.user_global_ns, self.user_ns)
+    File "/tmp/ipykernel_2677244/2012493764.py", line 789, in <module>
+      runForExperiment(df, info['target'], experiment, info, configurations)
+    File "/tmp/ipykernel_2677244/2012493764.py", line 621, in runForExperiment
+      model, acc = RV_CNN(X_train, y_train_enc, X_test, y_test_enc, downSampleRate)
+    File "/tmp/ipykernel_2677244/2012493764.py", line 57, in RV_CNN
+      model.fit(X_train, y_train_encoded,
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/utils/traceback_utils.py", line 65, in error_handler
+      return fn(*args, **kwargs)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1742, in fit
+      tmp_logs = self.train_function(iterator)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1338, in train_function
+      return step_function(self, iterator)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1322, in step_function
+      outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1303, in run_step
+      outputs = model.train_step(data)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1084, in train_step
+      self.optimizer.minimize(loss, self.trainable_variables, tape=tape)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/optimizers/optimizer.py", line 543, in minimize
+      grads_and_vars = self.compute_gradients(loss, var_list, tape)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/optimizers/optimizer.py", line 276, in compute_gradients
+      grads = tape.gradient(loss, var_list)
+Node: 'gradient_tape/sequential/conv1d_1/Conv1D/Conv2DBackpropInput'
+Conv2DCustomBackpropInputOp only supports NHWC.
+	 [[{{node gradient_tape/sequential/conv1d_1/Conv1D/Conv2DBackpropInput}}]] [Op:__inference_train_function_4400]
+2024-12-09 15:45:35,011 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:45:35,011 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:45:35,011 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:45:35,011 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:45:35,011 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:45:35,011 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:45:35,011 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:45:45,494 - ERROR - Error in RV_CNN: in user code:
+
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1338, in train_function  *
+        return step_function(self, iterator)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1322, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1303, in run_step  **
+        outputs = model.train_step(data)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1080, in train_step
+        y_pred = self(x, training=True)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+        raise e.with_traceback(filtered_tb) from None
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/input_spec.py", line 298, in assert_input_compatibility
+        raise ValueError(
+
+    ValueError: Input 0 of layer "sequential" is incompatible with the layer: expected shape=(None, 2000, 1), found shape=(None, 1, 2000)
+
+2024-12-09 15:45:52,935 - ERROR - Error in RV_CNN: in user code:
+
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1338, in train_function  *
+        return step_function(self, iterator)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1322, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1303, in run_step  **
+        outputs = model.train_step(data)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1080, in train_step
+        y_pred = self(x, training=True)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+        raise e.with_traceback(filtered_tb) from None
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/input_spec.py", line 298, in assert_input_compatibility
+        raise ValueError(
+
+    ValueError: Input 0 of layer "sequential" is incompatible with the layer: expected shape=(None, 200, 1), found shape=(None, 1, 200)
+
+2024-12-09 15:47:28,684 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:47:28,684 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:47:28,684 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:47:28,684 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:47:28,684 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:47:28,684 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:47:28,684 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:47:28,684 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:47:28,684 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:47:38,951 - ERROR - Error in RV_CNN: in user code:
+
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1338, in train_function  *
+        return step_function(self, iterator)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1322, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1303, in run_step  **
+        outputs = model.train_step(data)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1080, in train_step
+        y_pred = self(x, training=True)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+        raise e.with_traceback(filtered_tb) from None
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/input_spec.py", line 298, in assert_input_compatibility
+        raise ValueError(
+
+    ValueError: Input 0 of layer "sequential" is incompatible with the layer: expected shape=(None, 2000, 1), found shape=(None, 1, 2000)
+
+2024-12-09 15:47:46,172 - ERROR - Error in RV_CNN: in user code:
+
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1338, in train_function  *
+        return step_function(self, iterator)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1322, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1303, in run_step  **
+        outputs = model.train_step(data)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1080, in train_step
+        y_pred = self(x, training=True)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+        raise e.with_traceback(filtered_tb) from None
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/input_spec.py", line 298, in assert_input_compatibility
+        raise ValueError(
+
+    ValueError: Input 0 of layer "sequential" is incompatible with the layer: expected shape=(None, 200, 1), found shape=(None, 1, 200)
+
+2024-12-09 15:50:59,603 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:50:59,603 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:50:59,603 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:50:59,603 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:50:59,603 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:50:59,603 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:50:59,603 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:50:59,603 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:50:59,603 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:50:59,603 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:50:59,603 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 15:51:09,819 - ERROR - Error in RV_CNN: in user code:
+
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1338, in train_function  *
+        return step_function(self, iterator)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1322, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1303, in run_step  **
+        outputs = model.train_step(data)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1080, in train_step
+        y_pred = self(x, training=True)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+        raise e.with_traceback(filtered_tb) from None
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/input_spec.py", line 298, in assert_input_compatibility
+        raise ValueError(
+
+    ValueError: Input 0 of layer "sequential" is incompatible with the layer: expected shape=(None, 2000, 1), found shape=(None, 1, 2000)
+
+2024-12-09 15:51:17,027 - ERROR - Error in RV_CNN: in user code:
+
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1338, in train_function  *
+        return step_function(self, iterator)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1322, in step_function  **
+        outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1303, in run_step  **
+        outputs = model.train_step(data)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/training.py", line 1080, in train_step
+        y_pred = self(x, training=True)
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+        raise e.with_traceback(filtered_tb) from None
+    File "/home/msherazi/environments/aa/lib/python3.8/site-packages/keras/src/engine/input_spec.py", line 298, in assert_input_compatibility
+        raise ValueError(
+
+    ValueError: Input 0 of layer "sequential" is incompatible with the layer: expected shape=(None, 200, 1), found shape=(None, 1, 200)
+
+2024-12-09 16:01:48,384 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:01:48,384 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:01:48,384 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:01:48,384 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:01:48,384 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:01:48,384 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:01:48,384 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:01:48,384 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:01:48,384 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:01:48,384 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:01:48,384 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:01:48,384 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:01:48,384 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:02:01,422 - ERROR - Error in RV_CNN: Exception encountered when calling layer "average_pooling1d" (type AveragePooling1D).
+
+Negative dimension size caused by subtracting 2 from 1 for '{{node average_pooling1d/AvgPool}} = AvgPool[T=DT_FLOAT, data_format="NHWC", ksize=[1, 2, 1, 1], padding="VALID", strides=[1, 2, 1, 1]](average_pooling1d/ExpandDims)' with input shapes: [?,1,1,2].
+
+Call arguments received by layer "average_pooling1d" (type AveragePooling1D):
+  • inputs=tf.Tensor(shape=(None, 1, 2), dtype=float32)
+2024-12-09 16:02:10,298 - ERROR - Error in RV_CNN: Exception encountered when calling layer "average_pooling1d" (type AveragePooling1D).
+
+Negative dimension size caused by subtracting 2 from 1 for '{{node average_pooling1d/AvgPool}} = AvgPool[T=DT_FLOAT, data_format="NHWC", ksize=[1, 2, 1, 1], padding="VALID", strides=[1, 2, 1, 1]](average_pooling1d/ExpandDims)' with input shapes: [?,1,1,2].
+
+Call arguments received by layer "average_pooling1d" (type AveragePooling1D):
+  • inputs=tf.Tensor(shape=(None, 1, 2), dtype=float32)
+2024-12-09 16:05:47,773 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:05:47,773 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:05:47,773 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:05:47,773 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:05:47,773 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:05:47,773 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:05:47,773 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:05:47,773 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:05:47,773 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:05:47,773 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:05:47,773 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:05:47,773 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:05:47,773 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:05:47,773 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:05:47,773 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:39:17,220 - INFO - Attack: SNR, Perturbation: 10:Gaussian Noise, Key:(freq, butter4MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc), Metrics: {'accuracy': 0.9377049180327869, 'precision': 0.9372510626339887, 'recall': 0.9331286835664172, 'f1_score': 0.9344296997338662}
+2024-12-09 16:39:17,411 - INFO - Attack: SNR, Perturbation: 20:Gaussian Noise, Key:(freq, butter4MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc), Metrics: {'accuracy': 0.9475409836065574, 'precision': 0.9469110305868398, 'recall': 0.9438484068230282, 'f1_score': 0.9449356041077964}
+2024-12-09 16:39:17,585 - INFO - Attack: SNR, Perturbation: 30:Gaussian Noise, Key:(freq, butter4MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc), Metrics: {'accuracy': 0.9475409836065574, 'precision': 0.9487005588499073, 'recall': 0.9439877602232511, 'f1_score': 0.9455061090766509}
+2024-12-09 16:39:18,275 - INFO - Attack: fgsm, Targeted: False, Key:(freq, butter4MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc), Metrics: {'accuracy': 0.003278688524590164, 'precision': 0.002564102564102564, 'recall': 0.0033444816053511705, 'f1_score': 0.0029027576197387522}
+2024-12-09 16:39:27,974 - INFO - Attack: pgd, Targeted: False, Key:(freq, butter4MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc), Metrics: {'accuracy': 0.003278688524590164, 'precision': 0.0015384615384615385, 'recall': 0.0033444816053511705, 'f1_score': 0.002107481559536354}
+2024-12-09 16:43:29,463 - INFO - Attack: cw, Targeted: False, Key:(freq, butter4MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc), Metrics: {'accuracy': 0.0, 'precision': 0.0, 'recall': 0.0, 'f1_score': 0.0}
+2024-12-09 16:43:30,059 - INFO - Attack: fgsm, Targeted: True:12, Key:(freq, butter4MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc), Metrics: {'accuracy': 0.09508196721311475, 'precision': 0.013293694125272109, 'recall': 0.0802675585284281, 'f1_score': 0.022641609598131336}
+2024-12-09 16:43:39,804 - INFO - Attack: pgd, Targeted: True:12, Key:(freq, butter4MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc), Metrics: {'accuracy': 0.09508196721311475, 'precision': 0.0840080971659919, 'recall': 0.0802675585284281, 'f1_score': 0.019385233240654925}
+2024-12-09 16:47:41,153 - INFO - Attack: cw, Targeted: True:12, Key:(freq, butter4MHz_Fs100MHz, {'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, dvc), Metrics: {'accuracy': 0.11147540983606558, 'precision': 0.04181936251181272, 'recall': 0.09650068128328998, 'f1_score': 0.04459187831072878}
+2024-12-09 16:47:41,154 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:47:41,154 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:47:41,154 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:47:41,154 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:47:41,154 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:47:41,155 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:47:41,155 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:47:41,155 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:47:41,155 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:47:41,155 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:47:41,155 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:47:41,155 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:47:41,155 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:47:41,155 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 16:47:41,155 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:11:11,902 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:11:11,910 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:11:11,910 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:11:11,911 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:11:11,911 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:11:11,911 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:11:11,912 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:11:11,912 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:11:11,913 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:11:11,913 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:11:11,914 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:11:11,914 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:11:11,914 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:11:11,915 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:11:11,915 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:13:25,046 - ERROR - Error during model training/eval: Could not interpret activation function identifier: cart_relu
+2024-12-09 17:15:01,961 - ERROR - Error during model training/eval: Could not interpret activation function identifier: cart_relu
+2024-12-09 17:17:12,215 - ERROR - Error during model training/eval: Could not interpret activation function identifier: cart_relu
+2024-12-09 17:23:47,348 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:23:47,351 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:23:47,351 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:23:47,352 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:23:47,352 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:23:47,353 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:23:47,353 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:23:47,353 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:23:47,354 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:23:47,354 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:23:47,355 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:23:47,355 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:23:47,355 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:23:47,356 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:23:47,356 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:23:56,492 - ERROR - Error during model training/eval: Exception encountered when calling ComplexConv1D.call().
+
+[1mDimension -126 must be >= 0[0m
+
+Arguments received by ComplexConv1D.call():
+  • args=('<KerasTensor shape=(None, 1, 2000), dtype=complex64, sparse=False, name=keras_tensor>',)
+  • kwargs=<class 'inspect._empty'>
+2024-12-09 17:33:46,921 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:33:46,926 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:33:46,926 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:33:46,926 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:33:46,927 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:33:46,927 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:33:46,927 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:33:46,928 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:33:46,928 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:33:46,928 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:33:46,929 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:33:46,929 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:33:46,929 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:33:46,930 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:33:46,930 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:33:55,953 - ERROR - Error during model training/eval: add_weight() got multiple values for argument 'shape'
+2024-12-09 17:34:02,593 - ERROR - Error during model training/eval: add_weight() got multiple values for argument 'shape'
+2024-12-09 17:54:13,457 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:54:13,461 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:54:13,461 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:54:13,462 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:54:13,462 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:54:13,463 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:54:13,463 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:54:13,464 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:54:13,464 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:54:13,464 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:54:13,465 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:54:13,465 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:54:13,465 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:54:13,466 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:54:13,466 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:54:22,437 - ERROR - Error during model training/eval: add_weight() got multiple values for argument 'shape'
+2024-12-09 17:59:26,283 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:59:26,288 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:59:26,288 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:59:26,289 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:59:26,289 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:59:26,290 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:59:26,290 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:59:26,290 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:59:26,291 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:59:26,291 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:59:26,292 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:59:26,292 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:59:26,292 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:59:26,293 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:59:26,293 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 17:59:35,641 - ERROR - Error during model training/eval: add_weight() got multiple values for argument 'shape'
+2024-12-09 17:59:42,616 - ERROR - Error during model training/eval: add_weight() got multiple values for argument 'shape'
+2024-12-09 17:59:53,029 - ERROR - Error during model training/eval: add_weight() got multiple values for argument 'shape'
+2024-12-09 18:11:58,549 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:11:58,552 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:11:58,553 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:11:58,553 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:11:58,553 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:11:58,553 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:11:58,554 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:11:58,554 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:11:58,554 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:11:58,554 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:11:58,555 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:11:58,555 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:11:58,555 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:11:58,556 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:11:58,556 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:12:07,177 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_26568\4286787691.py", line 118, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=convert_to_real_with_abs, kernel_regularizer=regularizers.L1(0.001))(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 229, in build
+    self.w_r = self.add_weight('kernel_r',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 18:12:07,581 - ERROR - Error during model training/eval: Exception encountered when calling Dense.call().
+
+[1mValue passed to parameter 'features' has DataType complex64 not in list of allowed values: float32, float64, int32, uint8, int16, int8, int64, bfloat16, uint16, float16, uint32, uint64, qint8[0m
+
+Arguments received by Dense.call():
+  • inputs=tf.Tensor(shape=(None, 808), dtype=complex64)
+  • training=True
+2024-12-09 18:12:14,144 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_26568\4286787691.py", line 118, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=convert_to_real_with_abs, kernel_regularizer=regularizers.L1(0.001))(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 229, in build
+    self.w_r = self.add_weight('kernel_r',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 18:12:14,345 - ERROR - Error during model training/eval: Exception encountered when calling Dense.call().
+
+[1mValue passed to parameter 'features' has DataType complex64 not in list of allowed values: float32, float64, int32, uint8, int16, int8, int64, bfloat16, uint16, float16, uint32, uint64, qint8[0m
+
+Arguments received by Dense.call():
+  • inputs=tf.Tensor(shape=(None, 82), dtype=complex64)
+  • training=True
+2024-12-09 18:12:23,715 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_26568\4286787691.py", line 118, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=convert_to_real_with_abs, kernel_regularizer=regularizers.L1(0.001))(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 229, in build
+    self.w_r = self.add_weight('kernel_r',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 18:12:23,969 - ERROR - Error during model training/eval: Exception encountered when calling Dense.call().
+
+[1mValue passed to parameter 'features' has DataType complex64 not in list of allowed values: float32, float64, int32, uint8, int16, int8, int64, bfloat16, uint16, float16, uint32, uint64, qint8[0m
+
+Arguments received by Dense.call():
+  • inputs=tf.Tensor(shape=(None, 808), dtype=complex64)
+  • training=True
+2024-12-09 18:24:47,749 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:24:47,752 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:24:47,753 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:24:47,753 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:24:47,754 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:24:47,754 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:24:47,754 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:24:47,755 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:24:47,755 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:24:47,755 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:24:47,755 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:24:47,756 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:24:47,756 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:24:47,756 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:24:47,757 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 18:24:57,612 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_22480\4286787691.py", line 118, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=convert_to_real_with_abs, kernel_regularizer=regularizers.L1(0.001))(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 230, in build
+    self.w_r = self.add_weight('kernel_r',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 18:24:57,824 - ERROR - Error during model training/eval: Exception encountered when calling Dense.call().
+
+[1mValue passed to parameter 'features' has DataType complex64 not in list of allowed values: float32, float64, int32, uint8, int16, int8, int64, bfloat16, uint16, float16, uint32, uint64, qint8[0m
+
+Arguments received by Dense.call():
+  • inputs=tf.Tensor(shape=(None, 808), dtype=complex64)
+  • training=True
+2024-12-09 18:25:04,530 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_22480\4286787691.py", line 118, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=convert_to_real_with_abs, kernel_regularizer=regularizers.L1(0.001))(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 230, in build
+    self.w_r = self.add_weight('kernel_r',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 18:25:04,706 - ERROR - Error during model training/eval: Exception encountered when calling Dense.call().
+
+[1mValue passed to parameter 'features' has DataType complex64 not in list of allowed values: float32, float64, int32, uint8, int16, int8, int64, bfloat16, uint16, float16, uint32, uint64, qint8[0m
+
+Arguments received by Dense.call():
+  • inputs=tf.Tensor(shape=(None, 82), dtype=complex64)
+  • training=True
+2024-12-09 18:25:14,284 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_22480\4286787691.py", line 118, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=convert_to_real_with_abs, kernel_regularizer=regularizers.L1(0.001))(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 230, in build
+    self.w_r = self.add_weight('kernel_r',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 18:25:14,465 - ERROR - Error during model training/eval: Exception encountered when calling Dense.call().
+
+[1mValue passed to parameter 'features' has DataType complex64 not in list of allowed values: float32, float64, int32, uint8, int16, int8, int64, bfloat16, uint16, float16, uint32, uint64, qint8[0m
+
+Arguments received by Dense.call():
+  • inputs=tf.Tensor(shape=(None, 808), dtype=complex64)
+  • training=True
+2024-12-09 18:25:21,232 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_22480\4286787691.py", line 118, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=convert_to_real_with_abs, kernel_regularizer=regularizers.L1(0.001))(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 230, in build
+    self.w_r = self.add_weight('kernel_r',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 18:25:21,423 - ERROR - Error during model training/eval: Exception encountered when calling Dense.call().
+
+[1mValue passed to parameter 'features' has DataType complex64 not in list of allowed values: float32, float64, int32, uint8, int16, int8, int64, bfloat16, uint16, float16, uint32, uint64, qint8[0m
+
+Arguments received by Dense.call():
+  • inputs=tf.Tensor(shape=(None, 82), dtype=complex64)
+  • training=True
+2024-12-09 18:25:28,022 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_22480\4286787691.py", line 118, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=convert_to_real_with_abs, kernel_regularizer=regularizers.L1(0.001))(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 230, in build
+    self.w_r = self.add_weight('kernel_r',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 18:25:28,211 - ERROR - Error during model training/eval: Exception encountered when calling Dense.call().
+
+[1mValue passed to parameter 'features' has DataType complex64 not in list of allowed values: float32, float64, int32, uint8, int16, int8, int64, bfloat16, uint16, float16, uint32, uint64, qint8[0m
+
+Arguments received by Dense.call():
+  • inputs=tf.Tensor(shape=(None, 42), dtype=complex64)
+  • training=True
+2024-12-09 18:25:37,452 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_22480\4286787691.py", line 118, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=convert_to_real_with_abs, kernel_regularizer=regularizers.L1(0.001))(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 230, in build
+    self.w_r = self.add_weight('kernel_r',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 18:25:37,693 - ERROR - Error during model training/eval: Exception encountered when calling Dense.call().
+
+[1mValue passed to parameter 'features' has DataType complex64 not in list of allowed values: float32, float64, int32, uint8, int16, int8, int64, bfloat16, uint16, float16, uint32, uint64, qint8[0m
+
+Arguments received by Dense.call():
+  • inputs=tf.Tensor(shape=(None, 808), dtype=complex64)
+  • training=True
+2024-12-09 22:13:03,059 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:13:03,069 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:13:03,070 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:13:03,070 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:13:03,071 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:13:03,071 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:13:03,071 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:13:03,072 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:13:03,072 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:13:03,072 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:13:03,073 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:13:03,073 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:13:03,073 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:13:03,074 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:13:03,074 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:13:11,637 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_24760\2586633085.py", line 118, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=convert_to_real_with_abs, kernel_regularizer=regularizers.L1(0.001))(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 230, in build
+    self.w_r = self.add_weight('kernel_r',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:13:11,646 - ERROR - Error during model training/eval: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:13:17,895 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_24760\2586633085.py", line 118, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=convert_to_real_with_abs, kernel_regularizer=regularizers.L1(0.001))(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 230, in build
+    self.w_r = self.add_weight('kernel_r',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:13:17,903 - ERROR - Error during model training/eval: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:13:26,437 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_24760\2586633085.py", line 118, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=convert_to_real_with_abs, kernel_regularizer=regularizers.L1(0.001))(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 230, in build
+    self.w_r = self.add_weight('kernel_r',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:13:26,445 - ERROR - Error during model training/eval: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:31:00,720 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:31:00,724 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:31:00,725 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:31:00,725 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:31:00,725 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:31:00,726 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:31:00,726 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:31:00,727 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:31:00,727 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:31:00,727 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:31:00,728 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:31:00,728 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:31:00,728 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:31:00,729 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:31:00,729 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:31:09,341 - ERROR - Error during model training/eval: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:31:15,936 - ERROR - Error during model training/eval: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:32:57,853 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:32:57,858 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:32:57,858 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:32:57,859 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:32:57,859 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:32:57,860 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:32:57,860 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:32:57,860 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:32:57,861 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:32:57,861 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:32:57,861 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:32:57,862 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:32:57,862 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:32:57,862 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:32:57,862 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:33:06,620 - ERROR - Error during model training/eval: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:33:13,137 - ERROR - Error during model training/eval: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:33:22,317 - ERROR - Error during model training/eval: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:35:07,156 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:35:07,162 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:35:07,163 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:35:07,163 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:35:07,164 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:35:07,164 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:35:07,165 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:35:07,165 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:35:07,166 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:35:07,166 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:35:07,166 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:35:07,167 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:35:07,167 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:35:07,167 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:35:07,168 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:35:15,929 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_27968\399611930.py", line 122, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=cart_relu, kernel_regularizer=regularizers.L1(0.001), dtype=np.float32)(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 265, in build
+    self.w = self.add_weight('kernel',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:35:15,935 - ERROR - Error during model training/eval: local variable 'out' referenced before assignment
+2024-12-09 22:35:22,587 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_27968\399611930.py", line 122, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=cart_relu, kernel_regularizer=regularizers.L1(0.001), dtype=np.float32)(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 265, in build
+    self.w = self.add_weight('kernel',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:35:22,594 - ERROR - Error during model training/eval: local variable 'out' referenced before assignment
+2024-12-09 22:35:32,734 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_27968\399611930.py", line 122, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=cart_relu, kernel_regularizer=regularizers.L1(0.001), dtype=np.float32)(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 265, in build
+    self.w = self.add_weight('kernel',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:35:32,741 - ERROR - Error during model training/eval: local variable 'out' referenced before assignment
+2024-12-09 22:36:11,330 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:36:11,336 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:36:11,336 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:36:11,337 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:36:11,337 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:36:11,337 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:36:11,338 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:36:11,338 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:36:11,339 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:36:11,339 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:36:11,339 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:36:11,340 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:36:11,340 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:36:11,340 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:36:11,341 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:36:20,014 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_36556\3307097708.py", line 119, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=cart_relu, kernel_regularizer=regularizers.L1(0.001), dtype=np.float32)(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 265, in build
+    self.w = self.add_weight('kernel',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:36:20,020 - ERROR - Error during model training/eval: local variable 'out' referenced before assignment
+2024-12-09 22:36:26,493 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_36556\3307097708.py", line 119, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=cart_relu, kernel_regularizer=regularizers.L1(0.001), dtype=np.float32)(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 265, in build
+    self.w = self.add_weight('kernel',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:36:26,500 - ERROR - Error during model training/eval: local variable 'out' referenced before assignment
+2024-12-09 22:36:36,125 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_36556\3307097708.py", line 119, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=cart_relu, kernel_regularizer=regularizers.L1(0.001), dtype=np.float32)(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 265, in build
+    self.w = self.add_weight('kernel',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:36:36,130 - ERROR - Error during model training/eval: local variable 'out' referenced before assignment
+2024-12-09 22:37:51,041 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:37:51,046 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:37:51,047 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:37:51,047 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:37:51,048 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:37:51,048 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:37:51,049 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:37:51,049 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:37:51,049 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:37:51,050 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:37:51,050 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:37:51,051 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:37:51,051 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:37:51,051 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:37:51,052 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:37:59,804 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_27656\2651597067.py", line 119, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=cart_relu, kernel_regularizer=regularizers.L1(0.001), dtype=np.float32)(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 265, in build
+    self.w = self.add_weight('kernel',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:37:59,812 - ERROR - Error during model training/eval: local variable 'model' referenced before assignment
+2024-12-09 22:38:06,607 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_27656\2651597067.py", line 119, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=cart_relu, kernel_regularizer=regularizers.L1(0.001), dtype=np.float32)(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 265, in build
+    self.w = self.add_weight('kernel',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:38:06,612 - ERROR - Error during model training/eval: local variable 'model' referenced before assignment
+2024-12-09 22:39:00,329 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:39:00,336 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:39:00,337 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:39:00,337 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:39:00,338 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:39:00,338 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:39:00,339 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:39:00,339 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:39:00,340 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:39:00,340 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:39:00,340 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:39:00,341 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:39:00,341 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:39:00,341 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:39:00,342 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:39:09,032 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_15308\1838971875.py", line 119, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=cart_relu, kernel_regularizer=regularizers.L1(0.001), dtype=np.float32)(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 265, in build
+    self.w = self.add_weight('kernel',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:39:09,039 - ERROR - Error during model training/eval: local variable 'model' referenced before assignment
+2024-12-09 22:39:15,515 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_15308\1838971875.py", line 119, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=cart_relu, kernel_regularizer=regularizers.L1(0.001), dtype=np.float32)(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 265, in build
+    self.w = self.add_weight('kernel',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:39:15,521 - ERROR - Error during model training/eval: local variable 'model' referenced before assignment
+2024-12-09 22:53:47,283 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:53:47,293 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:53:47,293 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:53:47,293 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:53:47,294 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:53:47,294 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:53:47,295 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:53:47,295 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:53:47,295 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:53:47,296 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:53:47,296 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:53:47,297 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:53:47,297 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:53:47,297 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:53:47,298 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-09 22:53:56,130 - ERROR - add_weight() got multiple values for argument 'shape'
+Traceback (most recent call last):
+  File "C:\Users\msherazi\AppData\Local\Temp\ipykernel_27156\1838971875.py", line 119, in CV_CNN
+    x = complex_layers.ComplexDense(100, activation=cart_relu, kernel_regularizer=regularizers.L1(0.001), dtype=np.float32)(x)
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\keras\src\utils\traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\msherazi\AppData\Roaming\Python\Python39\site-packages\cvnn\layers\core.py", line 265, in build
+    self.w = self.add_weight('kernel',
+TypeError: add_weight() got multiple values for argument 'shape'
+2024-12-09 22:53:56,138 - ERROR - Error during model training/eval: local variable 'model' referenced before assignment
+2024-12-11 14:15:51,432 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-11 14:15:52,125 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-11 14:15:52,125 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-11 14:15:52,126 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-11 14:15:52,126 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-11 14:15:52,127 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-11 14:15:52,127 - ERROR - Line does not match expected pattern: mode:freq, config:butter2MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-11 14:15:52,128 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-11 14:15:52,128 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-11 14:15:52,128 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-11 14:15:52,129 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-11 14:15:52,129 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-11 14:15:52,129 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-11 14:15:52,130 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs100MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-11 14:15:52,130 - ERROR - Line does not match expected pattern: mode:freq, config:butter4MHz_Fs10MHz, query:{'SDR': '1', 'antenna': '1', 'txPower': 9.0, 'pos': '4'}, target:dvc, accuracy:None
+2024-12-12 12:00:58,633 - INFO - --- offBody scenario ---
+2024-12-12 12:01:00,905 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-12-12 12:01:00,918 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-12-12 12:01:01,786 - WARNING - No channel noise data for offBody.
+2024-12-12 12:01:03,609 - INFO - --- onBody scenario ---
+2024-12-12 12:01:07,181 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-12-12 12:01:07,191 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-12-12 12:01:07,860 - WARNING - No channel noise data for onBody.
+2024-12-12 12:01:11,144 - INFO - All requested plots have been generated and saved.
+2024-12-12 12:18:14,773 - INFO - --- offBody scenario ---
+2024-12-12 12:18:15,795 - WARNING - No channel noise data for offBody.
+2024-12-12 12:21:37,395 - INFO - --- offBody scenario ---
+2024-12-12 12:21:38,476 - WARNING - No channel noise data for offBody.
+2024-12-12 12:21:39,454 - INFO - --- onBody scenario ---
+2024-12-12 12:21:40,559 - WARNING - No channel noise data for onBody.
+2024-12-12 12:21:41,606 - INFO - --- offBody scenario ---
+2024-12-12 12:21:42,645 - WARNING - No channel noise data for offBody.
+2024-12-12 12:21:43,616 - INFO - --- onBody scenario ---
+2024-12-12 12:21:44,763 - WARNING - No channel noise data for onBody.
+2024-12-12 12:21:45,764 - INFO - --- offBody scenario ---
+2024-12-12 12:21:46,813 - WARNING - No channel noise data for offBody.
+2024-12-12 12:21:48,024 - INFO - --- onBody scenario ---
+2024-12-12 12:21:49,145 - WARNING - No channel noise data for onBody.
+2024-12-12 12:21:50,176 - INFO - --- offBody scenario ---
+2024-12-12 12:21:51,214 - WARNING - No channel noise data for offBody.
+2024-12-12 12:21:52,248 - INFO - --- onBody scenario ---
+2024-12-12 12:21:53,362 - WARNING - No channel noise data for onBody.
+2024-12-12 12:21:54,348 - INFO - --- offBody scenario ---
+2024-12-12 12:21:55,495 - WARNING - No channel noise data for offBody.
+2024-12-12 12:21:56,589 - INFO - --- onBody scenario ---
+2024-12-12 12:21:57,728 - WARNING - No channel noise data for onBody.
+2024-12-12 12:21:58,817 - INFO - --- offBody scenario ---
+2024-12-12 12:21:59,864 - WARNING - No channel noise data for offBody.
+2024-12-12 12:22:00,892 - INFO - --- onBody scenario ---
+2024-12-12 12:22:02,037 - WARNING - No channel noise data for onBody.
+2024-12-12 12:22:03,124 - INFO - --- offBody scenario ---
+2024-12-12 12:22:04,292 - WARNING - No channel noise data for offBody.
+2024-12-12 12:22:05,349 - INFO - --- onBody scenario ---
+2024-12-12 12:22:06,496 - WARNING - No channel noise data for onBody.
+2024-12-12 12:22:07,531 - INFO - --- offBody scenario ---
+2024-12-12 12:22:08,863 - WARNING - No channel noise data for offBody.
+2024-12-12 12:22:09,880 - INFO - --- onBody scenario ---
+2024-12-12 12:22:11,062 - WARNING - No channel noise data for onBody.
+2024-12-12 12:22:12,094 - INFO - --- offBody scenario ---
+2024-12-12 12:22:13,190 - WARNING - No channel noise data for offBody.
+2024-12-12 12:22:14,233 - INFO - --- onBody scenario ---
+2024-12-12 12:22:15,407 - WARNING - No channel noise data for onBody.
+2024-12-12 12:22:16,498 - INFO - --- offBody scenario ---
+2024-12-12 12:22:17,628 - WARNING - No channel noise data for offBody.
+2024-12-12 12:22:18,777 - INFO - --- onBody scenario ---
+2024-12-12 12:22:19,959 - WARNING - No channel noise data for onBody.
+2024-12-12 12:22:21,293 - INFO - --- offBody scenario ---
+2024-12-12 12:28:48,337 - INFO - --- offBody scenario ---
+2024-12-12 12:30:00,650 - INFO - --- offBody scenario ---
+2024-12-12 12:30:01,744 - WARNING - No channel noise data for offBody.
+2024-12-12 12:30:02,808 - INFO - --- onBody scenario ---
+2024-12-12 12:30:04,252 - WARNING - No channel noise data for onBody.
+2024-12-12 12:30:05,280 - INFO - --- offBody scenario ---
+2024-12-12 12:30:06,356 - WARNING - No channel noise data for offBody.
+2024-12-12 12:30:07,354 - INFO - --- onBody scenario ---
+2024-12-12 12:30:08,503 - WARNING - No channel noise data for onBody.
+2024-12-12 12:30:09,487 - INFO - --- offBody scenario ---
+2024-12-12 12:30:10,615 - WARNING - No channel noise data for offBody.
+2024-12-12 12:30:11,631 - INFO - --- onBody scenario ---
+2024-12-12 12:30:12,755 - WARNING - No channel noise data for onBody.
+2024-12-12 12:30:13,754 - INFO - --- offBody scenario ---
+2024-12-12 12:30:14,783 - WARNING - No channel noise data for offBody.
+2024-12-12 12:30:15,807 - INFO - --- onBody scenario ---
+2024-12-12 12:30:16,918 - WARNING - No channel noise data for onBody.
+2024-12-12 12:30:17,958 - INFO - --- offBody scenario ---
+2024-12-12 12:30:19,059 - WARNING - No channel noise data for offBody.
+2024-12-12 12:30:20,098 - INFO - --- onBody scenario ---
+2024-12-12 12:30:21,252 - WARNING - No channel noise data for onBody.
+2024-12-12 12:30:22,283 - INFO - --- offBody scenario ---
+2024-12-12 12:30:23,360 - WARNING - No channel noise data for offBody.
+2024-12-12 12:30:24,416 - INFO - --- onBody scenario ---
+2024-12-12 12:30:25,591 - WARNING - No channel noise data for onBody.
+2024-12-12 12:30:26,618 - INFO - --- offBody scenario ---
+2024-12-12 12:30:27,777 - WARNING - No channel noise data for offBody.
+2024-12-12 12:30:28,800 - INFO - --- onBody scenario ---
+2024-12-12 12:30:29,954 - WARNING - No channel noise data for onBody.
+2024-12-12 12:30:31,006 - INFO - --- offBody scenario ---
+2024-12-12 12:30:32,458 - WARNING - No channel noise data for offBody.
+2024-12-12 12:30:33,510 - INFO - --- onBody scenario ---
+2024-12-12 12:30:34,681 - WARNING - No channel noise data for onBody.
+2024-12-12 12:30:35,724 - INFO - --- offBody scenario ---
+2024-12-12 12:30:36,796 - WARNING - No channel noise data for offBody.
+2024-12-12 12:30:37,853 - INFO - --- onBody scenario ---
+2024-12-12 12:30:38,991 - WARNING - No channel noise data for onBody.
+2024-12-12 12:30:40,063 - INFO - --- offBody scenario ---
+2024-12-12 12:30:41,158 - WARNING - No channel noise data for offBody.
+2024-12-12 12:30:42,246 - INFO - --- onBody scenario ---
+2024-12-12 12:30:43,397 - WARNING - No channel noise data for onBody.
+2024-12-12 12:30:44,486 - INFO - --- offBody scenario ---
+2024-12-12 12:30:45,591 - WARNING - No channel noise data for offBody.
+2024-12-12 12:30:46,701 - INFO - --- onBody scenario ---
+2024-12-12 12:35:05,457 - INFO - --- offBody scenario ---
+2024-12-12 12:35:06,532 - WARNING - No channel noise data for offBody.
+2024-12-12 12:35:07,543 - INFO - --- onBody scenario ---
+2024-12-12 12:35:08,684 - WARNING - No channel noise data for onBody.
+2024-12-12 12:35:09,668 - INFO - --- Combined Visualizations for offBody ---
+2024-12-12 12:35:10,201 - INFO - --- Combined Visualizations for onBody ---
+2024-12-12 12:39:03,278 - INFO - --- offBody scenario ---
+2024-12-12 12:39:04,329 - WARNING - No channel noise data for offBody.
+2024-12-12 12:39:05,378 - INFO - --- onBody scenario ---
+2024-12-12 12:39:06,481 - WARNING - No channel noise data for onBody.
+2024-12-12 12:39:07,476 - INFO - --- Combined Visualizations for offBody ---
+2024-12-12 12:39:08,005 - INFO - --- Combined Visualizations for onBody ---
