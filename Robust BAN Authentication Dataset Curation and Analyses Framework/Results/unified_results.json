@@ -1,0 +1,596 @@
+{
+  "root": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025",
+  "generated_by": "build_unified_results.py",
+  "version": 2,
+  "onbody_device_identification": {
+    "artifacts": {
+      "models": [
+        "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\onbody_device_identification\\onbody_device_identification_best_model.joblib"
+      ]
+    },
+    "raw_results": {
+      "holdout": {
+        "accuracy": 0.8988235294117647,
+        "f1_weighted": 0.8978611074078776,
+        "ece_uncalibrated": 0.026052941176470626,
+        "ece_temp_scaled_best": 0.024572561258380504,
+        "ece_temp_scaled_best_T": 0.85,
+        "separability": {
+          "mean_pairwise_dprime_pc1": 0.24252985701005558,
+          "mean_pairwise_bhattacharyya_pc1": 0.7324558818155167
+        }
+      },
+      "deep_learning": {
+        "best_accuracy": 0.13176470588235295,
+        "best_f1_weighted": 0.07406104222710044
+      },
+      "chance_baseline": 0.08333333333333333
+    },
+    "latest_run": {
+      "run_dir": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\onbody_device_identification\\onbody_device_identification__onbody_device_identification_1758477492",
+      "calibration_sweep_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\onbody_device_identification\\onbody_device_identification__onbody_device_identification_1758477492\\calibration_sweep.csv",
+      "separability_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\onbody_device_identification\\onbody_device_identification__onbody_device_identification_1758477492\\separability.csv",
+      "split_diagnostics_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\onbody_device_identification\\onbody_device_identification__onbody_device_identification_1758477492\\split_diagnostics.csv",
+      "manifest": {
+        "task": "onbody_device_identification",
+        "model": "et",
+        "model_path": "C:\\Users\\msherazi\\BAN Auth Project\\results09202025\\onbody_device_identification\\onbody_device_identification_best_model.joblib",
+        "calibration_sweep_csv": "C:\\Users\\msherazi\\BAN Auth Project\\results09202025\\onbody_device_identification\\onbody_device_identification__onbody_device_identification_1758477492\\calibration_sweep.csv",
+        "split_diagnostics_csv": "C:\\Users\\msherazi\\BAN Auth Project\\results09202025\\onbody_device_identification\\onbody_device_identification__onbody_device_identification_1758477492\\split_diagnostics.csv"
+      }
+    }
+  },
+  "offbody_verification": {
+    "artifacts": {},
+    "raw_results": {
+      "per_device": {
+        "device_1": {
+          "auc": 0.5078167517006803,
+          "eer": 0.5007738095238095,
+          "tau_eer": -432.6505432128906
+        },
+        "device_2": {
+          "auc": 0.4986198129251701,
+          "eer": 0.502202380952381,
+          "tau_eer": -158.47702026367188
+        },
+        "device_3": {
+          "auc": 0.4900403911564626,
+          "eer": 0.5079761904761904,
+          "tau_eer": -214.7901611328125
+        },
+        "device_4": {
+          "auc": 0.49992261904761903,
+          "eer": 0.5006547619047619,
+          "tau_eer": -153.26763916015625
+        },
+        "device_5": {
+          "auc": 0.5023045068027211,
+          "eer": 0.49630952380952376,
+          "tau_eer": -87.0258560180664
+        },
+        "device_6": {
+          "auc": 0.508089880952381,
+          "eer": 0.49,
+          "tau_eer": -115.29067993164062
+        },
+        "device_7": {
+          "auc": 0.4921721088435374,
+          "eer": 0.5077380952380952,
+          "tau_eer": -284.6289367675781
+        },
+        "device_9": {
+          "auc": 0.4880225765306122,
+          "eer": 0.5120238095238094,
+          "tau_eer": -380.728759765625
+        },
+        "device_10": {
+          "auc": 0.5055079081632653,
+          "eer": 0.4979166666666667,
+          "tau_eer": -410.1190490722656
+        },
+        "device_11": {
+          "auc": 0.518114668367347,
+          "eer": 0.4855357142857143,
+          "tau_eer": -143.25125122070312
+        },
+        "device_12": {
+          "auc": 0.5053451530612245,
+          "eer": 0.49363095238095234,
+          "tau_eer": -334.20037841796875
+        },
+        "device_13": {
+          "auc": 0.5019983418367346,
+          "eer": 0.5001190476190476,
+          "tau_eer": -240.55262756347656
+        }
+      },
+      "macro_auc": 0.5014962266156462,
+      "macro_eer": 0.49957341269841277,
+      "eer_histogram": "C:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\eer_histogram.png"
+    },
+    "latest_run": {
+      "run_dir": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947",
+      "summary_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\verification_summary.csv",
+      "per_device_artifacts": {
+        "1": {
+          "roc_png": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_1\\roc.png",
+          "roc_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_1\\roc.csv",
+          "thresholds_json": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_1\\thresholds.json"
+        },
+        "10": {
+          "roc_png": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_10\\roc.png",
+          "roc_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_10\\roc.csv",
+          "thresholds_json": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_10\\thresholds.json"
+        },
+        "11": {
+          "roc_png": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_11\\roc.png",
+          "roc_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_11\\roc.csv",
+          "thresholds_json": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_11\\thresholds.json"
+        },
+        "12": {
+          "roc_png": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_12\\roc.png",
+          "roc_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_12\\roc.csv",
+          "thresholds_json": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_12\\thresholds.json"
+        },
+        "13": {
+          "roc_png": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_13\\roc.png",
+          "roc_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_13\\roc.csv",
+          "thresholds_json": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_13\\thresholds.json"
+        },
+        "2": {
+          "roc_png": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_2\\roc.png",
+          "roc_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_2\\roc.csv",
+          "thresholds_json": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_2\\thresholds.json"
+        },
+        "3": {
+          "roc_png": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_3\\roc.png",
+          "roc_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_3\\roc.csv",
+          "thresholds_json": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_3\\thresholds.json"
+        },
+        "4": {
+          "roc_png": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_4\\roc.png",
+          "roc_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_4\\roc.csv",
+          "thresholds_json": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_4\\thresholds.json"
+        },
+        "5": {
+          "roc_png": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_5\\roc.png",
+          "roc_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_5\\roc.csv",
+          "thresholds_json": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_5\\thresholds.json"
+        },
+        "6": {
+          "roc_png": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_6\\roc.png",
+          "roc_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_6\\roc.csv",
+          "thresholds_json": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_6\\thresholds.json"
+        },
+        "7": {
+          "roc_png": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_7\\roc.png",
+          "roc_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_7\\roc.csv",
+          "thresholds_json": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_7\\thresholds.json"
+        },
+        "9": {
+          "roc_png": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_9\\roc.png",
+          "roc_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_9\\roc.csv",
+          "thresholds_json": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_verification\\offbody_verification__offbody_verification_1758476947\\devices\\device_9\\thresholds.json"
+        }
+      },
+      "manifest": null
+    }
+  },
+  "device_identification_combined": {
+    "raw_results": {
+      "onBody": {
+        "holdout": {
+          "accuracy": 0.8988235294117647,
+          "f1_weighted": 0.8978611074078776,
+          "ece_uncalibrated": 0.026052941176470626,
+          "ece_temp_scaled_best": 0.024572561258380504,
+          "ece_temp_scaled_best_T": 0.85,
+          "separability": {
+            "mean_pairwise_dprime_pc1": 0.24252985701005558,
+            "mean_pairwise_bhattacharyya_pc1": 0.7324558818155167
+          }
+        },
+        "deep_learning": {
+          "best_accuracy": 0.11764705882352941,
+          "best_f1_weighted": 0.06062778965490478
+        },
+        "chance_baseline": 0.08333333333333333
+      },
+      "offBody": {
+        "holdout": {
+          "accuracy": 0.21946564885496184,
+          "f1_weighted": 0.2184755443994095,
+          "ece_uncalibrated": 0.026956106870229007,
+          "ece_temp_scaled_best": 0.02346816973611811,
+          "ece_temp_scaled_best_T": 1.2,
+          "separability": {
+            "mean_pairwise_dprime_pc1": 0.10344001336900611,
+            "mean_pairwise_bhattacharyya_pc1": 0.1160194132736792
+          }
+        },
+        "deep_learning": {
+          "best_accuracy": 0.09351145038167939,
+          "best_f1_weighted": 0.04001825782360133
+        },
+        "chance_baseline": 0.07692307692307693
+      }
+    }
+  },
+  "offbody_position": {
+    "artifacts": {
+      "models": [
+        "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\offbody_position\\offbody_position_global_best_model.joblib"
+      ]
+    },
+    "global_summary_rows": [
+      {
+        "accuracy": 0.1963696369636963,
+        "eer": null
+      }
+    ],
+    "per_device_rows": [
+      {
+        "device": 1,
+        "accuracy": 0.4102564102564102
+      },
+      {
+        "device": 2,
+        "accuracy": 0.3170731707317073
+      },
+      {
+        "device": 3,
+        "accuracy": 0.2558139534883721
+      },
+      {
+        "device": 4,
+        "accuracy": 0.2857142857142857
+      },
+      {
+        "device": 5,
+        "accuracy": 0.3076923076923077
+      },
+      {
+        "device": 6,
+        "accuracy": 0.3076923076923077
+      },
+      {
+        "device": 7,
+        "accuracy": 0.3076923076923077
+      },
+      {
+        "device": 9,
+        "accuracy": 0.25
+      },
+      {
+        "device": 10,
+        "accuracy": 0.3636363636363636
+      },
+      {
+        "device": 11,
+        "accuracy": 0.4090909090909091
+      },
+      {
+        "device": 12,
+        "accuracy": 0.3
+      },
+      {
+        "device": 13,
+        "accuracy": 0.4047619047619047
+      }
+    ]
+  },
+  "onbody_movement": {
+    "artifacts": {},
+    "global_summary_rows": [
+      {
+        "accuracy": 0.6741344195519349,
+        "eer": 0.3175639747424393
+      }
+    ]
+  },
+  "all_analyses": {
+    "raw_results": {
+      "summary": {
+        "offbody_position_global_accuracy": 0.19636963696369636,
+        "verification_macro_auc": 0.5014962266156462,
+        "verification_macro_eer": 0.49957341269841277,
+        "offbody_deviceid_per_position_macro_acc": 0.31111400849611903,
+        "device_id_onbody_accuracy": 0.8988235294117647,
+        "device_id_offbody_accuracy": 0.21946564885496184,
+        "onbody_movement_global_accuracy": 0.6741344195519349,
+        "mixed_baseline_accuracy": 1.0,
+        "mixed_robust_accuracy": 1.0,
+        "mixed_leaky_accuracy": 1.0,
+        "hierarchical_overall_accuracy": null,
+        "hierarchical_scenario_accuracy": null,
+        "hierarchical_onbody_position_accuracy": null,
+        "hierarchical_offbody_device_accuracy": null,
+        "hierarchical_offbody_position_accuracy": null
+      },
+      "offbody_position": {
+        "global": {
+          "holdout": {
+            "accuracy": 0.19636963696369636,
+            "f1_weighted": 0.19590301617809058,
+            "ece_uncalibrated": 0.09959570957095709,
+            "ece_temp_scaled_best": 0.04712525186790198,
+            "ece_temp_scaled_best_T": 1.5,
+            "separability": {
+              "mean_pairwise_dprime_pc1": 0.12079254311286977,
+              "mean_pairwise_bhattacharyya_pc1": 0.20158630808886052
+            }
+          },
+          "logo": {
+            "accuracy_mean": 0.2039273002041537,
+            "accuracy_std": 0.03896382167328638
+          },
+          "deep_learning": {
+            "best_accuracy": 0.16336633663366337,
+            "best_f1_weighted": 0.09213612485525086
+          },
+          "chance_baseline": 0.14285714285714285
+        },
+        "per_device": {
+          "device_1": {
+            "holdout": {
+              "accuracy": 0.41025641025641024,
+              "f1_weighted": 0.4194608809993425,
+              "ece_uncalibrated": 0.17256410256410257,
+              "ece_temp_scaled_best": 0.1616573453163509,
+              "ece_temp_scaled_best_T": 1.5,
+              "separability": {
+                "mean_pairwise_dprime_pc1": 0.24435597477919732,
+                "mean_pairwise_bhattacharyya_pc1": 3.5214621317266763
+              }
+            },
+            "chance_baseline": 0.14285714285714285
+          },
+          "device_2": {
+            "holdout": {
+              "accuracy": 0.3170731707317073,
+              "f1_weighted": 0.3134373198935609,
+              "ece_uncalibrated": 0.14310975609756096,
+              "ece_temp_scaled_best": 0.10190647079561238,
+              "ece_temp_scaled_best_T": 1.5,
+              "separability": {
+                "mean_pairwise_dprime_pc1": 0.31637604121660107,
+                "mean_pairwise_bhattacharyya_pc1": 4.081026618759795
+              }
+            },
+            "deep_learning": {
+              "best_accuracy": 0.17073170731707318,
+              "best_f1_weighted": 0.05085625324338349
+            },
+            "chance_baseline": 0.14285714285714285
+          },
+          "device_3": {
+            "holdout": {
+              "accuracy": 0.2558139534883721,
+              "f1_weighted": 0.2396040006505123,
+              "ece_uncalibrated": 0.13709302325581396,
+              "ece_temp_scaled_best": 0.02789243751444377,
+              "ece_temp_scaled_best_T": 1.5,
+              "separability": {
+                "mean_pairwise_dprime_pc1": 0.213037911959196,
+                "mean_pairwise_bhattacharyya_pc1": 4.171563975079882
+              }
+            },
+            "deep_learning": {
+              "best_accuracy": 0.20930232558139536,
+              "best_f1_weighted": 0.1280454042081949
+            },
+            "chance_baseline": 0.14285714285714285
+          },
+          "device_4": {
+            "holdout": {
+              "accuracy": 0.2857142857142857,
+              "f1_weighted": 0.2736097236097236,
+              "ece_uncalibrated": 0.13460317460317459,
+              "ece_temp_scaled_best": 0.07898507624725071,
+              "ece_temp_scaled_best_T": 1.2,
+              "separability": {
+                "mean_pairwise_dprime_pc1": 0.24448860156935456,
+                "mean_pairwise_bhattacharyya_pc1": 4.134478556809642
+              }
+            },
+            "deep_learning": {
+              "best_accuracy": 0.16666666666666666,
+              "best_f1_weighted": 0.07298136645962733
+            },
+            "chance_baseline": 0.14285714285714285
+          },
+          "device_5": {
+            "holdout": {
+              "accuracy": 0.3076923076923077,
+              "f1_weighted": 0.30123039353808584,
+              "ece_uncalibrated": 0.2274358974358974,
+              "ece_temp_scaled_best": 0.09611677883594551,
+              "ece_temp_scaled_best_T": 1.5,
+              "separability": {
+                "mean_pairwise_dprime_pc1": 0.2909442122223834,
+                "mean_pairwise_bhattacharyya_pc1": 3.51724788050122
+              }
+            },
+            "chance_baseline": 0.14285714285714285
+          },
+          "device_6": {
+            "holdout": {
+              "accuracy": 0.3076923076923077,
+              "f1_weighted": 0.28087206910736323,
+              "ece_uncalibrated": 0.22615384615384615,
+              "ece_temp_scaled_best": 0.12637429793145724,
+              "ece_temp_scaled_best_T": 1.5,
+              "separability": {
+                "mean_pairwise_dprime_pc1": 0.17423159493013984,
+                "mean_pairwise_bhattacharyya_pc1": 2.1967560705239957
+              }
+            },
+            "chance_baseline": 0.14285714285714285
+          },
+          "device_7": {
+            "holdout": {
+              "accuracy": 0.3076923076923077,
+              "f1_weighted": 0.2729122729122729,
+              "ece_uncalibrated": 0.19782051282051277,
+              "ece_temp_scaled_best": 0.1162335636261781,
+              "ece_temp_scaled_best_T": 1.2,
+              "separability": {
+                "mean_pairwise_dprime_pc1": 0.22884487080046675,
+                "mean_pairwise_bhattacharyya_pc1": 2.1959978887913167
+              }
+            },
+            "chance_baseline": 0.14285714285714285
+          },
+          "device_9": {
+            "holdout": {
+              "accuracy": 0.25,
+              "f1_weighted": 0.25982323232323234,
+              "ece_uncalibrated": 0.1438125,
+              "ece_temp_scaled_best": 0.04465820710848961,
+              "ece_temp_scaled_best_T": 1.5,
+              "separability": {
+                "mean_pairwise_dprime_pc1": 0.12901104534631233,
+                "mean_pairwise_bhattacharyya_pc1": 3.1148448085199374
+              }
+            },
+            "chance_baseline": 0.14285714285714285
+          },
+          "device_10": {
+            "holdout": {
+              "accuracy": 0.36363636363636365,
+              "f1_weighted": 0.3390151515151515,
+              "ece_uncalibrated": 0.11511363636363636
+            }
+          }
+        }
+      }
+    }
+  },
+  "hierarchical_classification": {
+    "note": "hierarchical cascade metrics omitted for concision"
+  },
+  "mixed_scenario": {
+    "variants": {
+      "baseline": {
+        "run_dir": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\mixed_scenario\\baseline\\mixed_scenario_baseline__mixed_scenario_baseline_1758477416",
+        "calibration_sweep_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\mixed_scenario\\baseline\\mixed_scenario_baseline__mixed_scenario_baseline_1758477416\\calibration_sweep.csv",
+        "separability_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\mixed_scenario\\baseline\\mixed_scenario_baseline__mixed_scenario_baseline_1758477416\\separability.csv",
+        "split_diagnostics_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\mixed_scenario\\baseline\\mixed_scenario_baseline__mixed_scenario_baseline_1758477416\\split_diagnostics.csv",
+        "manifest": {
+          "task": "mixed_scenario_baseline",
+          "model": "rf",
+          "model_path": "C:\\Users\\msherazi\\BAN Auth Project\\results09202025\\mixed_scenario\\baseline\\mixed_scenario_baseline_best_model.joblib",
+          "calibration_sweep_csv": "C:\\Users\\msherazi\\BAN Auth Project\\results09202025\\mixed_scenario\\baseline\\mixed_scenario_baseline__mixed_scenario_baseline_1758477416\\calibration_sweep.csv",
+          "split_diagnostics_csv": "C:\\Users\\msherazi\\BAN Auth Project\\results09202025\\mixed_scenario\\baseline\\mixed_scenario_baseline__mixed_scenario_baseline_1758477416\\split_diagnostics.csv"
+        }
+      },
+      "robust": {
+        "run_dir": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\mixed_scenario\\robust\\mixed_scenario_robust__mixed_scenario_robust_1758477433",
+        "calibration_sweep_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\mixed_scenario\\robust\\mixed_scenario_robust__mixed_scenario_robust_1758477433\\calibration_sweep.csv",
+        "separability_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\mixed_scenario\\robust\\mixed_scenario_robust__mixed_scenario_robust_1758477433\\separability.csv",
+        "split_diagnostics_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\mixed_scenario\\robust\\mixed_scenario_robust__mixed_scenario_robust_1758477433\\split_diagnostics.csv",
+        "manifest": {
+          "task": "mixed_scenario_robust",
+          "model": "rf",
+          "model_path": "C:\\Users\\msherazi\\BAN Auth Project\\results09202025\\mixed_scenario\\robust\\mixed_scenario_robust_best_model.joblib",
+          "calibration_sweep_csv": "C:\\Users\\msherazi\\BAN Auth Project\\results09202025\\mixed_scenario\\robust\\mixed_scenario_robust__mixed_scenario_robust_1758477433\\calibration_sweep.csv",
+          "split_diagnostics_csv": "C:\\Users\\msherazi\\BAN Auth Project\\results09202025\\mixed_scenario\\robust\\mixed_scenario_robust__mixed_scenario_robust_1758477433\\split_diagnostics.csv"
+        }
+      },
+      "leaky": {
+        "run_dir": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\mixed_scenario\\leaky\\mixed_scenario_leaky__mixed_scenario_leaky_1758477441",
+        "calibration_sweep_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\mixed_scenario\\leaky\\mixed_scenario_leaky__mixed_scenario_leaky_1758477441\\calibration_sweep.csv",
+        "separability_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\mixed_scenario\\leaky\\mixed_scenario_leaky__mixed_scenario_leaky_1758477441\\separability.csv",
+        "split_diagnostics_csv": "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\mixed_scenario\\leaky\\mixed_scenario_leaky__mixed_scenario_leaky_1758477441\\split_diagnostics.csv",
+        "manifest": {
+          "task": "mixed_scenario_leaky",
+          "model": "rf",
+          "model_path": "C:\\Users\\msherazi\\BAN Auth Project\\results09202025\\mixed_scenario\\leaky\\mixed_scenario_leaky_best_model.joblib",
+          "calibration_sweep_csv": "C:\\Users\\msherazi\\BAN Auth Project\\results09202025\\mixed_scenario\\leaky\\mixed_scenario_leaky__mixed_scenario_leaky_1758477441\\calibration_sweep.csv",
+          "split_diagnostics_csv": "C:\\Users\\msherazi\\BAN Auth Project\\results09202025\\mixed_scenario\\leaky\\mixed_scenario_leaky__mixed_scenario_leaky_1758477441\\split_diagnostics.csv"
+        }
+      }
+    },
+    "artifacts": {},
+    "raw_results": {
+      "baseline": {
+        "holdout": {
+          "accuracy": 1.0,
+          "f1_weighted": 1.0,
+          "ece_uncalibrated": 0.045821123321123265,
+          "ece_temp_scaled_best": 0.02295140325622861,
+          "ece_temp_scaled_best_T": 0.7,
+          "roc_auc": 1.0,
+          "eer": 0.0,
+          "tau_eer": 0.5733333333333334,
+          "separability": {
+            "mean_pairwise_dprime_pc1": 0.028393527328168622,
+            "mean_pairwise_bhattacharyya_pc1": 9.0572211938815
+          }
+        },
+        "logo": {
+          "accuracy_mean": 1.0,
+          "accuracy_std": 0.0
+        },
+        "deep_learning": {
+          "best_accuracy": 0.9945054945054945,
+          "best_f1_weighted": 0.9945084528721219
+        },
+        "chance_baseline": 0.5
+      },
+      "robust": {
+        "holdout": {
+          "accuracy": 1.0,
+          "f1_weighted": 1.0,
+          "ece_uncalibrated": 0.05621794871794869,
+          "ece_temp_scaled_best": 0.028912449048922227,
+          "ece_temp_scaled_best_T": 0.7,
+          "roc_auc": 0.9999999999999999,
+          "eer": 0.0,
+          "tau_eer": 0.5366666666666666,
+          "separability": {
+            "mean_pairwise_dprime_pc1": 0.028393527328168622,
+            "mean_pairwise_bhattacharyya_pc1": 9.07329498871291
+          }
+        },
+        "logo": {
+          "accuracy_mean": 1.0,
+          "accuracy_std": 0.0
+        },
+        "deep_learning": {
+          "best_accuracy": 0.9954212454212454,
+          "best_f1_weighted": 0.9954233195978642
+        },
+        "chance_baseline": 0.5
+      },
+      "leaky": {
+        "holdout": {
+          "accuracy": 1.0,
+          "f1_weighted": 1.0,
+          "ece_uncalibrated": 0.02730593607305942,
+          "ece_temp_scaled_best": 0.011401213995203135,
+          "ece_temp_scaled_best_T": 0.7,
+          "roc_auc": 1.0,
+          "eer": 0.0,
+          "tau_eer": 0.6033333333333334,
+          "separability": {
+            "mean_pairwise_dprime_pc1": 0.037247791839053745,
+            "mean_pairwise_bhattacharyya_pc1": 8.638716933213598
+          }
+        },
+        "deep_learning": {
+          "best_accuracy": 0.9968387776606955,
+          "best_f1_weighted": 0.9968384227068677
+        },
+        "chance_baseline": 0.5
+      }
+    }
+  },
+  "extras": {
+    "json_results": [
+      "c:\\Users\\msherazi\\BAN Auth Project\\results09202025\\unified_results.json"
+    ],
+    "csv_summaries": []
+  }
+}
