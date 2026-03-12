@@ -7,6 +7,15 @@ import pandas as pd
 
 
 def _read_csv_safe(path: Path) -> Optional[pd.DataFrame]:
+    """Read a CSV file, returning None on failure or if the file does not exist.
+
+    Args:
+        path: Path to the CSV file.
+
+    Returns:
+        A DataFrame with the CSV contents, or None if the file is missing or
+        cannot be parsed.
+    """
     try:
         if path.exists():
             return pd.read_csv(path)
@@ -16,6 +25,19 @@ def _read_csv_safe(path: Path) -> Optional[pd.DataFrame]:
 
 
 def _collect_latest_pack(dir_path: Path, prefix: str) -> Optional[Path]:
+    """Find the most recent timestamped subdirectory with a given name prefix.
+
+    Subdirectories are expected to follow the naming convention
+    ``<prefix>__<timestamp>`` and are sorted lexicographically so that the
+    last entry corresponds to the newest run.
+
+    Args:
+        dir_path: Directory to search in.
+        prefix: Expected prefix for the target subdirectory names.
+
+    Returns:
+        Path to the latest matching subdirectory, or None if none are found.
+    """
     if not dir_path.exists():
         return None
     candidates = sorted([p for p in dir_path.iterdir() if p.is_dir() and p.name.startswith(prefix + "__")])
@@ -23,6 +45,24 @@ def _collect_latest_pack(dir_path: Path, prefix: str) -> Optional[Path]:
 
 
 def build_manuscript_summary(results_root: Path) -> Dict[str, Any]:
+    """Aggregate analysis results into a combined summary for manuscript tables.
+
+    Scans the results directory for CSV outputs produced by each analysis
+    (hierarchical classification, verification, position detection, device
+    identification, movement, mixed scenario, and per-position device ID),
+    collects key rows, and writes a flattened ``combined_summary.csv`` and a
+    structured ``combined_summary.json`` to ``<results_root>/manuscript/``.
+
+    Args:
+        results_root: Root directory containing per-analysis result folders.
+
+    Returns:
+        dict: A dictionary with paths to the generated combined CSV and JSON
+        files, plus individual analysis summary rows keyed by analysis name.
+        Example keys include ``combined_summary_csv``,
+        ``combined_summary_json``, ``hierarchical_summary_row``,
+        ``verification_macro_row``, etc.
+    """
     out: Dict[str, Any] = {}
 
     # all_analyses summary
@@ -137,8 +177,18 @@ def build_manuscript_summary(results_root: Path) -> Dict[str, Any]:
 
 
 def main():
+    """Command-line entry point for aggregating analysis results.
+
+    Parses ``--results-root`` from the command line, runs
+    :func:`build_manuscript_summary`, and prints the paths to the generated
+    combined CSV and JSON files.
+
+    Example::
+
+        python results_report.py --results-root ./results
+    """
     parser = argparse.ArgumentParser(description="Aggregate results for manuscript tables/figures.")
-    parser.add_argument("--results-root", type=str, default="C:/Users/msherazi/BAN Auth Project/results09202025",
+    parser.add_argument("--results-root", type=str, default="./results",
                         help="Path to results root (e.g., results09202025)")
     args = parser.parse_args()
 
