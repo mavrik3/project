@@ -26,7 +26,17 @@ class DataLoader:
 
     @staticmethod
     def list_available_datasets(root: Path) -> List[Path]:
-        root = Path(root)
+        """List dataset directories available under a root path.
+
+        A directory is considered a valid dataset if it contains either an
+        ``index.parquet`` or ``index.csv`` file.
+
+        Args:
+            root: Root directory to search for datasets.
+
+        Returns:
+            Sorted list of Paths to valid dataset directories.
+        """
         if not root.exists():
             return []
         out: List[Path] = []
@@ -39,7 +49,19 @@ class DataLoader:
 
     @staticmethod
     def load_dataset(dir_path: Path) -> Tuple[pd.DataFrame, dict]:
-        dir_path = Path(dir_path)
+        """Load a dataset index and its associated dataset card from disk.
+
+        Reads ``index.parquet`` (preferred) or ``index.csv`` from the given
+        directory, and ``card.json`` if present.
+
+        Args:
+            dir_path: Path to the dataset directory.
+
+        Returns:
+            Tuple of (DataFrame, card dict). The DataFrame contains the dataset
+            index rows; the dict contains metadata from ``card.json`` (empty
+            dict if the card is absent or unreadable).
+        """
         idx_p = dir_path / "index.parquet"
         card_p = dir_path / "card.json"
         df: pd.DataFrame
@@ -74,7 +96,20 @@ class DataLoader:
         force_recompute: bool = False,
         debug_toy_subset: bool = False,
     ) -> pd.DataFrame:
-        pkl_path = Path(pkl_path)
+        """Load a DataFrame from a pickle file.
+
+        Args:
+            pkl_path: Path to the ``.pkl`` or ``.pickle`` file.
+            preproc_path: Unused; reserved for future preprocessed-cache
+                support.
+            force_recompute: Unused; reserved for future cache-bypass support.
+            debug_toy_subset: When True, randomly samples 2,000 rows from the
+                loaded DataFrame to speed up development iterations.
+
+        Returns:
+            The loaded DataFrame with the index reset, or an empty DataFrame
+            if the file does not exist or cannot be loaded.
+        """
         if not pkl_path.exists():
             logger.warning(f"Pickle path not found: {pkl_path}")
             return pd.DataFrame()
@@ -90,6 +125,20 @@ class DataLoader:
     def load_offbody_fallback(
         unified_pkl_path: Union[str, Path], max_rows: Optional[int] = None
     ) -> pd.DataFrame:
+        """Load off-body rows from a unified pickle file.
+
+        Reads the unified pickle and filters rows where the scenario column
+        equals ``"offbody"`` (case-insensitive). Useful as a fallback when a
+        dedicated off-body dataset file is not available.
+
+        Args:
+            unified_pkl_path: Path to the unified ``.pkl`` file.
+            max_rows: If provided, truncates the result to this many rows.
+
+        Returns:
+            DataFrame containing only off-body rows, with the index reset.
+            Returns an empty DataFrame if the file cannot be loaded.
+        """
         df = DataLoader.load_from_pickle(unified_pkl_path)
         if df.empty:
             return df
@@ -106,6 +155,19 @@ class DataPreprocessor:
 
     @staticmethod
     def detect_column(df: pd.DataFrame, candidates: Sequence[str]) -> Optional[str]:
+        """Find the first matching column name from a list of candidates.
+
+        Performs an exact match first, then a case-insensitive fuzzy match
+        against the DataFrame's column names.
+
+        Args:
+            df: DataFrame whose columns are searched.
+            candidates: Ordered list of preferred column name strings.
+
+        Returns:
+            The matching column name as it appears in the DataFrame, or None
+            if no candidate matches.
+        """
         for c in candidates:
             if c in df.columns:
                 return c
@@ -118,6 +180,19 @@ class DataPreprocessor:
 
     @staticmethod
     def standardize_columns(df: pd.DataFrame) -> pd.DataFrame:
+        """Rename dataset columns to the project's canonical names.
+
+        Maps common alternative column names for channel, scenario, device, and
+        position to their canonical equivalents (``channel``, ``scenario``,
+        ``dvc``, ``pos_label``). Also ensures the channel column is cast to
+        ``int`` and adds a ``global_frame_id`` column if one is absent.
+
+        Args:
+            df: Input DataFrame with potentially non-canonical column names.
+
+        Returns:
+            A copy of the DataFrame with standardized column names.
+        """
         if df.empty:
             return df
         df = df.copy()
@@ -150,6 +225,17 @@ class DataPreprocessor:
 
     @staticmethod
     def detect_iq_column(df: pd.DataFrame) -> Optional[str]:
+        """Identify the IQ signal column in a DataFrame.
+
+        Searches for known IQ column name candidates and checks that the
+        column contains object-dtype entries (i.e., array-like IQ samples).
+
+        Args:
+            df: DataFrame to inspect.
+
+        Returns:
+            Name of the detected IQ column, or None if none is found.
+        """
         for c in IQ_CANDIDATES:
             if c in df.columns:
                 # quick heuristic: object or list-like entries
@@ -159,6 +245,18 @@ class DataPreprocessor:
 
     @staticmethod
     def is_valid_iq(arr) -> bool:
+        """Check whether an array-like value looks like a valid IQ signal.
+
+        A value is considered valid if it is a list, tuple, or NumPy array
+        with more than four elements.
+
+        Args:
+            arr: Value to check.
+
+        Returns:
+            True if ``arr`` appears to be a non-trivial IQ signal, False
+            otherwise.
+        """
         if arr is None:
             return False
         if isinstance(arr, (list, tuple)) and len(arr) > 4:
@@ -169,6 +267,22 @@ class DataPreprocessor:
 
     @staticmethod
     def to_complex(arr) -> Optional[np.ndarray]:
+        """Convert an array-like IQ representation to a complex64 NumPy array.
+
+        Handles the following input formats:
+
+        - Already-complex NumPy arrays.
+        - Real-valued 2-D arrays of shape ``(N, 2)`` interpreted as
+          ``(I, Q)`` pairs.
+        - Lists or tuples in the same formats as above.
+
+        Args:
+            arr: Input IQ data in any supported format.
+
+        Returns:
+            Complex64 NumPy array, or None if the input cannot be interpreted
+            as a complex signal.
+        """
         if isinstance(arr, np.ndarray):
             if np.iscomplexobj(arr):
                 return arr.astype(np.complex64)
@@ -190,13 +304,42 @@ class DataPreprocessor:
         candidate_sps: Optional[Sequence[int]] = None,
         min_score: float = 0.25,
     ) -> Optional[np.ndarray]:
-        # Placeholder heuristic: just return first N samples if length ok.
+        """Extract the preamble portion of a BLE IQ frame.
+
+        Currently uses a placeholder heuristic that returns the first
+        ``preamble_len_bits * 2`` samples when the frame is long enough.
+        Future versions will implement proper preamble detection.
+
+        Args:
+            x: Complex IQ signal array.
+            preamble_len_bits: Expected length of the preamble in bits.
+            candidate_sps: Candidate samples-per-symbol values (reserved for
+                future use).
+            min_score: Minimum detection confidence threshold (reserved for
+                future use).
+
+        Returns:
+            NumPy array containing the extracted preamble samples, or None if
+            the frame is too short.
+        """
         if x.size < preamble_len_bits * 2:
             return None
         return x[: preamble_len_bits * 2]
 
     @staticmethod
     def normalize_iq_signal(x: np.ndarray) -> np.ndarray:
+        """Zero-mean and unit-variance normalize a complex IQ signal.
+
+        Subtracts the mean and divides by the standard deviation. If the
+        standard deviation is zero (constant signal), only mean subtraction is
+        applied.
+
+        Args:
+            x: Input complex or real IQ signal array.
+
+        Returns:
+            Normalized signal array of the same shape and dtype as ``x``.
+        """
         if x.size == 0:
             return x
         xr = x - np.mean(x)
@@ -207,6 +350,21 @@ class DataPreprocessor:
 
     @staticmethod
     def trim_transient(x: np.ndarray, drop_min: int = 800, frac: float = 0.08) -> np.ndarray:
+        """Remove transient samples from the beginning of an IQ frame.
+
+        Drops an initial segment whose length is the smaller of
+        ``len(x) * frac`` and ``drop_min``. Frames shorter than ``drop_min``
+        are returned unchanged.
+
+        Args:
+            x: Input IQ signal array.
+            drop_min: Minimum frame length required before any trimming is
+                applied; also the upper bound on the number of samples dropped.
+            frac: Fraction of the frame length to drop, capped at ``drop_min``.
+
+        Returns:
+            Trimmed signal array.
+        """
         if x.size <= drop_min:
             return x
         k = int(min(len(x) * frac, drop_min))
@@ -214,6 +372,24 @@ class DataPreprocessor:
 
     @staticmethod
     def preprocess_iq_frames(df: pd.DataFrame, target_length: int = 2000) -> pd.DataFrame:
+        """Preprocess raw IQ frames in a DataFrame and store the results.
+
+        For each row, converts the raw IQ entry to a complex array, applies
+        :meth:`normalize_iq_signal` and :meth:`trim_transient`, then truncates
+        to ``target_length`` samples. The processed signals are stored in a new
+        ``iq_proc`` column.
+
+        Args:
+            df: DataFrame containing a raw IQ column detected by
+                :meth:`detect_iq_column`.
+            target_length: Maximum number of samples to keep per frame after
+                trimming. Frames shorter than this are kept as-is.
+
+        Returns:
+            A copy of the input DataFrame with an additional ``iq_proc`` column
+            holding the processed complex arrays (or None for invalid frames).
+            Returns the original DataFrame unchanged if no IQ column is found.
+        """
         iq_col = DataPreprocessor.detect_iq_column(df)
         if iq_col is None:
             return df
@@ -237,6 +413,17 @@ class DataPreprocessor:
 
     @staticmethod
     def prepare_offbody_dataframe(df: pd.DataFrame, max_rows: Optional[int] = None) -> pd.DataFrame:
+        """Filter a DataFrame to off-body rows and optionally limit its size.
+
+        Args:
+            df: Input DataFrame, expected to have a ``scenario`` column.
+            max_rows: If provided, the result is truncated to this many rows.
+
+        Returns:
+            DataFrame containing only rows where ``scenario == "offbody"``
+            (case-insensitive), with the index reset. Returns the original
+            DataFrame unchanged if it is empty.
+        """
         if df.empty:
             return df
         if "scenario" in df.columns:
@@ -248,6 +435,17 @@ class DataPreprocessor:
 
     @staticmethod
     def prepare_onbody_dataframe(df: pd.DataFrame, max_rows: Optional[int] = None) -> pd.DataFrame:
+        """Filter a DataFrame to on-body rows and optionally limit its size.
+
+        Args:
+            df: Input DataFrame, expected to have a ``scenario`` column.
+            max_rows: If provided, the result is truncated to this many rows.
+
+        Returns:
+            DataFrame containing only rows where ``scenario == "onbody"``
+            (case-insensitive), with the index reset. Returns the original
+            DataFrame unchanged if it is empty.
+        """
         if df.empty:
             return df
         if "scenario" in df.columns:
@@ -327,7 +525,28 @@ class UnifiedDataManager:
         scenario_filter: Optional[str] = None,
         source_path: Optional[Union[str, Path, Dict[str, Union[str, Path]]]] = None,
     ) -> Dict[str, Any]:
-        exists: List[str] = []
+        """Verify that all required data sources exist on disk.
+
+        Resolves *source_path* to a spec dictionary and checks whether each
+        referenced file or dataset directory is accessible.
+
+        Args:
+            scenario_filter: If ``"onBody"`` or ``"offBody"``, only the
+                matching source (or the unified fallback) is checked.
+                Otherwise, all resolved sources are verified.
+            source_path: Data source specification. Accepts a file path,
+                directory path, or a dict mapping scenario keys to paths.
+                Falls back to ``self.root_dir`` if None.
+
+        Returns:
+            dict with keys:
+
+            - ``ok`` (bool): True when all required sources are present.
+            - ``spec`` (dict): Resolved source paths as strings.
+            - ``exists`` (list[str]): Paths that exist.
+            - ``missing`` (list[str]): Paths that are missing.
+            - ``message`` (str): ``"OK"`` or a short error description.
+        """
         missing: List[str] = []
         spec = self._parse_source_spec(source_path)
         if not spec:
@@ -382,7 +601,33 @@ class UnifiedDataManager:
         max_rows: Optional[int] = None,
         force_reload: bool = False,
     ) -> pd.DataFrame:
-        spec = self._parse_source_spec(source_path)
+        """Load a dataset from disk, standardize its columns, and optionally preprocess IQ frames.
+
+        Results are cached in ``self.data_cache`` keyed by source path,
+        scenario, row limit, and IQ-preprocessing flag so subsequent calls
+        with the same arguments are served from memory.
+
+        Args:
+            source_path: Path to the dataset. Accepts a pickle file, a
+                dataset directory (containing ``index.parquet``/``index.csv``),
+                or a dict mapping scenario keys to paths.
+            preprocess_iq: If True, runs
+                :meth:`DataPreprocessor.preprocess_iq_frames` on the loaded
+                DataFrame to normalize and trim IQ signal frames.
+            scenario_filter: Filter loaded rows to ``"onBody"`` or
+                ``"offBody"`` after loading.
+            max_rows: Limit the result to this many rows (head truncation).
+            force_reload: If True, bypass the cache and reload from disk.
+
+        Returns:
+            DataFrame with standardized column names, filtered by scenario
+            (if requested), sorted by ``global_frame_id``. Returns an empty
+            DataFrame when no valid source is found.
+
+        Raises:
+            ValueError: If the loaded DataFrame has no ``channel`` column
+                after standardization.
+        """
         pf = self.preflight_check(scenario_filter, source_path)
         if not pf["ok"]:
             logger.warning(f"Preflight failed: {pf['message']}")
@@ -435,6 +680,20 @@ class UnifiedDataManager:
         preprocess_iq: bool = False,
         max_rows: Optional[int] = None,
     ) -> pd.DataFrame:
+        """Load and return rows for a specific scenario (on-body or off-body).
+
+        Convenience wrapper around :meth:`load_and_preprocess` that sets
+        *scenario_filter* automatically.
+
+        Args:
+            scenario: ``"onBody"`` or ``"offBody"``.
+            source_path: Data source specification (file, directory, or dict).
+            preprocess_iq: Whether to preprocess IQ frames after loading.
+            max_rows: Maximum number of rows to return.
+
+        Returns:
+            DataFrame filtered to the requested scenario.
+        """
         return self.load_and_preprocess(
             source_path=source_path,
             preprocess_iq=preprocess_iq,
@@ -450,6 +709,23 @@ class UnifiedDataManager:
         preprocess_iq: bool = False,
         max_rows: Optional[int] = None,
     ) -> pd.DataFrame:
+        """Load and return rows for one or more specific device IDs.
+
+        Args:
+            device_id: A single device ID (int) or list of device IDs to
+                filter on the ``dvc`` column.
+            scenario: Optional scenario filter (``"onBody"`` or
+                ``"offBody"``).
+            source_path: Data source specification.
+            preprocess_iq: Whether to preprocess IQ frames.
+            max_rows: Maximum number of rows to return before device
+                filtering.
+
+        Returns:
+            DataFrame containing only rows matching the requested device(s).
+            Returns an empty DataFrame if the source is empty or has no
+            ``dvc`` column.
+        """
         df = self.load_and_preprocess(
             source_path=source_path,
             scenario_filter=scenario,
@@ -469,6 +745,23 @@ class UnifiedDataManager:
         preprocess_iq: bool = False,
         max_rows: Optional[int] = None,
     ) -> pd.DataFrame:
+        """Load and return rows for one or more body positions.
+
+        Args:
+            position: A single position label (str) or list of labels to
+                filter on the ``pos_label`` column.
+            scenario: Optional scenario filter (``"onBody"`` or
+                ``"offBody"``).
+            source_path: Data source specification.
+            preprocess_iq: Whether to preprocess IQ frames.
+            max_rows: Maximum number of rows to return before position
+                filtering.
+
+        Returns:
+            DataFrame containing only rows matching the requested position(s).
+            Returns an empty DataFrame if the source is empty or has no
+            ``pos_label`` column.
+        """
         df = self.load_and_preprocess(
             source_path=source_path,
             scenario_filter=scenario,
@@ -487,7 +780,26 @@ class UnifiedDataManager:
         preprocess_iq: bool = False,
         max_per_scenario: Optional[int] = None,
     ) -> pd.DataFrame:
-        # load both scenarios if available
+        """Load and concatenate on-body and off-body data into a single DataFrame.
+
+        Attempts to load both ``"onBody"`` and ``"offBody"`` scenarios from
+        *source_path*, optionally filters by device IDs and row limits per
+        scenario, then returns a combined DataFrame sorted by
+        ``global_frame_id``.
+
+        Args:
+            source_path: Data source specification (file, directory, or dict).
+            device_ids: Optional list of device IDs to retain. Rows with
+                other device IDs are dropped.
+            preprocess_iq: Whether to preprocess IQ frames after loading.
+            max_per_scenario: Maximum number of rows to keep per scenario
+                before concatenation.
+
+        Returns:
+            Combined DataFrame with rows from both scenarios, sorted by
+            ``global_frame_id``. Returns an empty DataFrame if no scenario
+            data could be loaded.
+        """
         spec = self._parse_source_spec(source_path)
         frames = []
         for scen in ("onBody", "offBody"):
